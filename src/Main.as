@@ -1,5 +1,8 @@
 package
 {
+	import com.nicolabortignon.geopic.ApplicationCapabilities;
+	import com.nicolabortignon.geopic.LoginPanel;
+	
 	import flash.desktop.NativeApplication;
 	import flash.display.MovieClip;
 	import flash.events.Event;
@@ -10,21 +13,31 @@ package
 	{
 		public var closeButton:MovieClip;
 		public var minimizeButton:MovieClip;
+		public var loginPanel:LoginPanel;
 	 
 		public function Main()
 		{
 			super();
 			this.addEventListener(Event.ADDED_TO_STAGE,  completeDone);
-			 
+			
 			closeButton.addEventListener(MouseEvent.CLICK, closeApp);
 			minimizeButton.addEventListener(MouseEvent.CLICK, minimizeApp);
 			draggableNativeWindowBar.addEventListener(MouseEvent.MOUSE_DOWN, dragApplication);
+			
+			
 		}
 	 
 		private function completeDone(e:Event):void{
  			trace("ADDED TO STAGE");
-			stage.nativeWindow.x = (Capabilities.screenResolutionX - stage.nativeWindow.width) / 2;
-			stage.nativeWindow.y = (Capabilities.screenResolutionY - stage.nativeWindow.height) / 2;
+			var appIstance:ApplicationCapabilities = ApplicationCapabilities.getInstance();
+			appIstance.mainWindowWidth = 1024;
+			appIstance.mainWindowHeight = 768;
+			
+			stage.nativeWindow.x = (Capabilities.screenResolutionX - appIstance.mainWindowWidth) / 2;
+			stage.nativeWindow.y = (Capabilities.screenResolutionY - appIstance.mainWindowHeight) / 2;
+			
+			
+			loginPanel.show();
 			
 		}
 		
