@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/82/trunk/FlexVersion/src/alducente/services
+END
+WSCache.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/82/trunk/FlexVersion/src/alducente/services/WSCache.as
+END
+WebService.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/82/trunk/FlexVersion/src/alducente/services/WebService.as
+END
+WSDL.as
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/82/trunk/FlexVersion/src/alducente/services/WSDL.as
+END
+WSMethod.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/82/trunk/FlexVersion/src/alducente/services/WSMethod.as
+END
+WSProxy.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/82/trunk/FlexVersion/src/alducente/services/WSProxy.as
+END
+WSLog.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/82/trunk/FlexVersion/src/alducente/services/WSLog.as
+END

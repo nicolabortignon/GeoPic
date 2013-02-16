@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%">
+	<mx:Script>
+		<![CDATA[
+import mx.events.ValidationResultEvent;
+import mx.validators.StringValidator;
+import roekensk.dao.UserDao;
+import roekensk.dao.UserDaoEvent;
+import roekensk.flex.entities.User;
+
+		public var user:User;
+
+		private var usernameValidator:StringValidator = new StringValidator();
+		private var passwordValidator:StringValidator = new StringValidator();
+		
+		private var userDao:UserDao = new UserDao();
+		private function performValidation():void {
+			usernameValidator.minLength = 3;
+			usernameValidator.maxLength = 20;
+			usernameValidator.required = true;
+			
+			passwordValidator.minLength = 3;
+			usernameValidator.maxLength = 20;
+			usernameValidator.required = true;
+			
+			usernameValidator.listener = username;
+			passwordValidator.listener = password;
+			
+			var userValid:ValidationResultEvent = usernameValidator.validate(username.text);
+			var passValid:ValidationResultEvent = passwordValidator.validate(password.text);
+			
+			if (userValid.type==ValidationResultEvent.VALID && passValid.type==ValidationResultEvent.VALID) {
+				login();
+			}
+		}
+		private function login():void {
+			userDao.addEventListener(UserDaoEvent.LOGIN_SUCCESS, onUserDaoComplete);
+			
+			btnLogin.enabled = false;
+			username.enabled = false;
+			password.enabled = false;
+			
+			userDao.login(username.text, password.text);
+		}
+		
+		private function onUserDaoComplete(e:UserDaoEvent):void {
+			if (e.type == UserDaoEvent.LOGIN_SUCCESS) {
+				user = e.target.user as User;
+				dispatchEvent(e);
+			} else if (e.type == UserDaoEvent.LOGIN_FAILED) {
+				trace("login failed");
+			}
+		}
+			
+		]]>
+	</mx:Script>
+
+	<mx:Panel title="Login">
+		<mx:HBox paddingRight="10" paddingLeft="10" paddingTop="10" paddingBottom="10">
+		<mx:VBox>
+			<mx:Label text="Username"/>
+			<mx:Label text="Password"/>
+		</mx:VBox>
+		<mx:VBox  horizontalAlign="right">
+			<mx:TextInput id="username"/>
+			<mx:TextInput id="password" displayAsPassword="true"/>
+			
+			<mx:Button id="btnLogin" label="Login" click="performValidation()" />
+		</mx:VBox>
+		</mx:HBox>
+		
+	</mx:Panel>
+</mx:Canvas>

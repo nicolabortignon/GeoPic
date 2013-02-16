@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Script>
+		<![CDATA[
+		import flash.events.Event;
+		import flash.net.URLLoader;
+		import flash.net.URLRequest;
+		import flash.net.URLRequestMethod;
+		import flash.net.URLVariables;
+		
+		private function login():void {
+			trace(txtUsername.text + " tries to log in");
+			var variables:URLVariables = new URLVariables();
+			
+			variables.username = txtUsername.text;
+			variables.pass = txtPassword.text;
+			
+			var request:URLRequest = new URLRequest("login.php");
+			request.method = URLRequestMethod.POST;
+			request.data = variables;
+			
+			var loader:URLLoader = new URLLoader();
+			loader.addEventListener(Event.COMPLETE, onLoginRequestComplete);
+			loader.load(request);
+			
+		}
+		
+		private function onLoginRequestComplete(e:Event):void {
+			var data:URLVariables = new URLVariables(e.target.data);
+		}
+			
+		]]>
+	</mx:Script>
+	
+	
+	<mx:VBox>
+		<mx:HBox>
+			<mx:Label text="Username"/>
+			<mx:TextInput id="txtUsername"/>
+		</mx:HBox>
+		<mx:HBox>
+			<mx:Label text="Password"/>
+			<mx:TextInput displayAsPassword="true" id="txtPassword"/>
+		</mx:HBox>
+		<mx:Button label="log in" click="login()" />
+	</mx:VBox>
+	
+</mx:Application>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="489" height="309">
+	<mx:ViewStack x="10" y="99" id="myViewStack" width="469" height="200">
+		<mx:Canvas label="Home" width="100%" height="100%" borderStyle="inset">
+			<mx:Text x="10" y="10" text="Home page" width="449" height="180"/>
+		</mx:Canvas>
+		<mx:Canvas label="Portfolio" width="100%" height="100%" borderStyle="inset">
+			<mx:Text x="10" y="10" text="Portfolio page" width="449" height="180"/>
+		</mx:Canvas>
+		<mx:Canvas label="About" width="100%" height="100%" borderStyle="inset">
+			<mx:Text x="10" y="10" text="About page" width="449" height="180"/>
+		</mx:Canvas>
+		<mx:Canvas label="Contact" width="100%" height="100%" borderStyle="inset">
+			<mx:Text x="10" y="10" text="Contact page" width="449" height="180"/>
+		</mx:Canvas>
+	</mx:ViewStack>
+	<mx:LinkBar x="115.5" y="43" dataProvider="myViewStack" borderStyle="inset">
+	</mx:LinkBar>
+</mx:Application>

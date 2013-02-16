@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel title="Login/Register" xmlns:mx="http://www.adobe.com/2006/mxml" >
+	
+	<mx:Script>
+		<![CDATA[
+		import flash.events.Event;
+		import flash.net.URLLoader;
+		import flash.net.URLRequest;
+		import flash.net.URLRequestMethod;
+		import flash.net.URLVariables;
+		import mx.core.Application;
+		import roekensk.flex.entities.User;
+		
+		private function loginClicked():void {
+			login(txtUsername.text, txtPassword.text);
+		}
+		private function login(username:String,pass:String):void {
+			trace(txtUsername.text + " tries to log in");
+			var variables:URLVariables = new URLVariables();
+			
+			variables.username = username;
+			variables.password = pass;
+			
+			var request:URLRequest = new URLRequest("http://127.0.0.1/flexTest/login.php");
+			request.method = URLRequestMethod.POST;
+			request.data = variables;
+			
+			var loader:URLLoader = new URLLoader();
+			loader.addEventListener(Event.COMPLETE, onLoginRequestComplete);
+			loader.load(request);
+			
+		}
+		
+		private function onLoginRequestComplete(e:Event):void {
+			//var data:URLVariables = new URLVariables(e.target.data);
+			//trace(e.target);
+			var responseLoader:URLLoader = URLLoader(e.target);
+			//trace("data: " + response.data);
+			var resp:XML = XML(responseLoader.data);
+			trace(resp.result);
+			
+			if(resp.result == 1) {
+			trace(resp.feedback.user);
+			
+			var user:User = new User(resp.feedback.user.attribute("id"), resp.feedback.user.username);
+			Application.application.login(user, true);
+			errorLabel.visible = false;
+			
+			//Application.application.setLoggedIn(true);
+			//Application.application.setUser(user);
+			} else {
+				errorLabel.visible = true;
+			}
+			
+		}
+			
+		private function register():void {
+			if (regPass.text == pass_check.text) {
+				var variables:URLVariables = new URLVariables();
+				variables.password = regPass.text;
+				variables.username = regUsername.text;
+				variables.email = email.text;
+				
+				var request:URLRequest = new URLRequest("http://127.0.0.1/flexTest/register.php");
+				request.method = URLRequestMethod.POST;
+				request.data = variables;
+				
+				var loader:URLLoader = new URLLoader();
+				loader.addEventListener(Event.COMPLETE, onRegisterRequestComplete);
+				loader.load(request);
+			} else {
+				regErrorLabel.text = "Your second password isn't the same";
+				regErrorLabel.visible = true;
+			}
+		}
+		private function onRegisterRequestComplete(e:Event):void {
+			
+			var responseLoader:URLLoader = URLLoader(e.target);
+			
+			var resp:XML = XML(responseLoader.data);
+			trace(resp.result);
+			
+			if(resp.result == 1) {
+			
+			login(regUsername.text, regPass.text);
+			errorLabel.visible = false;
+			
+			
+			//Application.application.setLoggedIn(true);
+			//Application.application.setUser(user);
+			} else {
+				regErrorLabel.visible = true;
+			}
+		}
+		]]>
+	</mx:Script>
+<mx:ViewStack id="stack" width="500" height="400">
+	<mx:Canvas id="loginScreenWrapper" name="login" >
+		<mx:VBox>
+		<mx:Canvas id="loginScreen" name="login">
+			
+			<mx:HBox>
+				<mx:Spacer></mx:Spacer>
+			<mx:VBox>
+				<mx:Spacer height="10"></mx:Spacer>
+				<mx:HBox>
+					<mx:Label text="Username"/><mx:Spacer width="100%"></mx:Spacer>
+					<mx:TextInput id="txtUsername"/>
+				</mx:HBox>
+				<mx:HBox>
+					<mx:Label text="Password"/><mx:Spacer width="100%"></mx:Spacer>
+					<mx:TextInput displayAsPassword="true" id="txtPassword"/>
+				</mx:HBox>
+				<mx:Label id="errorLabel" text="Login failed." visible="false" color="0xFF0000"></mx:Label>
+				<!--<mx:LinkButton id="toggleRegister" label="register" click="currentState='Register'"></mx:LinkButton>-->
+					
+			</mx:VBox>
+			<mx:Spacer></mx:Spacer>
+			</mx:HBox>
+		</mx:Canvas>
+		<mx:ControlBar>
+			<mx:HBox>
+				<mx:LinkButton id="registerLink" label="Need to register?" click="stack.selectedChild=registerForm"></mx:LinkButton>
+				<mx:Spacer width="100"></mx:Spacer>
+				<mx:Button id="btnLogin" label="Log In" click="loginClicked()"/>
+			</mx:HBox>
+		</mx:ControlBar>
+		</mx:VBox>
+	</mx:Canvas>
+	
+	<mx:Canvas id="registerForm" width="400" height="500" >
+		<mx:VBox>
+			<mx:Canvas>
+				<mx:VBox>
+					<mx:Spacer height="10"></mx:Spacer>
+					<mx:HBox>
+						<mx:Label text="Username"/><mx:Spacer width="100%"></mx:Spacer>
+						<mx:TextInput id="regUsername"/>
+					</mx:HBox>
+					<mx:HBox>
+						<mx:Label text="Password"/><mx:Spacer width="100%"></mx:Spacer>
+						<mx:TextInput displayAsPassword="true" id="regPass"/>
+					</mx:HBox>
+					<mx:HBox>
+						<mx:Label text="Retype Password"/>
+						<mx:TextInput displayAsPassword="true" id="pass_check"/>
+					</mx:HBox>
+					<mx:HBox>
+						<mx:Label text="email"></mx:Label>
+						<mx:TextInput id="email"></mx:TextInput>
+					</mx:HBox>
+					<mx:Label id="regErrorLabel" text="Login failed." visible="false" color="0xFF0000"></mx:Label>
+				</mx:VBox>
+			</mx:Canvas>
+			<mx:ControlBar>
+				<mx:HBox>
+					<mx:LinkButton id="loginLink" label="Return to login" click="stack.selectedChild=loginScreenWrapper"></mx:LinkButton>
+					<mx:Spacer width="100"></mx:Spacer>
+					<mx:Button id="btnRegister" label="Register" click="register()"/>
+				</mx:HBox>
+			</mx:ControlBar>
+		</mx:VBox>
+	</mx:Canvas>
+</mx:ViewStack>
+	
+</mx:Panel>
+

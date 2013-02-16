@@ -1,0 +1,40 @@
+﻿package roekensk.display.objects 
+{
+	import flash.events.MouseEvent;
+	import flash.geom.Point;
+	
+	/**
+	* ...
+	* @author DefaultUser (Tools -> Custom Arguments...)
+	*/
+	public class DraggablePointer extends Pointer
+	{
+		//public var origPoint:Point;
+		//public var holding:Boolean = false;
+		
+		public function DraggablePointer(_x:Number,_y:Number) 
+		{
+			super(_x, _y);
+			/*addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+			*/
+		}
+		
+		private function onMouseDown(e:MouseEvent):void {
+			holding = true;
+			//origPoint = new Point(this.x, this.y);
+		}
+		
+		private function onMouseUp(e:MouseEvent):void {
+			holding = false;
+		}
+		
+		private function onMouseMove(e:MouseEvent):void {
+			if (holding) {
+				//x = mouseX;
+			}
+		}
+	}
+	
+}

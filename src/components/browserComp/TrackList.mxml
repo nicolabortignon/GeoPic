@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:comp="roekensk.flex.components.*" creationComplete="init()">
+	
+	
+	<mx:HTTPService id="httpService" url="stub.xml" resultFormat="xml" result="resultHandler(event);"></mx:HTTPService>
+	
+	<mx:Script>
+		<![CDATA[
+			/*
+			http://krob.xtreemhost.com/flex/listTracks.php
+			 */ 
+import flash.events.Event;
+import mx.controls.dataGridClasses.DataGridColumn;
+import mx.rpc.events.FaultEvent;
+import mx.rpc.events.InvokeEvent;
+import mx.rpc.events.ResultEvent;
+import roekensk.flex.entities.TrackInfo;
+import roekensk.flex.entities.User;
+
+		//[Bindable(event="trackSelected")]
+		public var selectedTrack:XML;
+		
+		private function init():void {
+			trace("TrackList initializing");
+			httpService.addEventListener(FaultEvent.FAULT, onServiceFault);
+			//httpService.addEventListener(Event.ACTIVATE, onServiceActivate);
+			httpService.addEventListener(InvokeEvent.INVOKE, onInvoke);
+			httpService.send();
+			
+		}
+		private function onServiceFault(e:FaultEvent):void {
+			trace(e.message);
+		}
+		private function onInvoke(e:InvokeEvent):void {
+			//trace(e.message);
+		}
+		private function resultHandler(e:ResultEvent):void {
+			trace(e.message);
+			var list:XML = new XML(e.message.body);
+			grid.dataProvider = list.descendants("track");
+
+		}
+
+		private function faultHandler(e:ResultEvent):void {
+			trace("fout");
+		}
+		private function showUserInfo(e:Event):void {
+			var selected:int = e.currentTarget.selectedIndex;
+			//trace(selected);
+			//trace(grid.selectedItem);
+			selectedTrack = new XML(grid.selectedItem);
+			
+			var ev:Event = new Event("trackSelected");
+			dispatchEvent(ev);
+			//trace(grid.data[selected]);
+		}
+			
+		]]>
+	</mx:Script>
+
+	<mx:DataGrid id="grid" x="10" y="10" itemClick="showUserInfo(event)">
+		<mx:columns> 
+			<mx:DataGridColumn dataField="@id" sortable="true" width="30"></mx:DataGridColumn>
+			<mx:DataGridColumn dataField="@date" sortable="true"/>
+			<comp:DataGridColumnNested dataField="user.username" sortable="true">
+			</comp:DataGridColumnNested>
+			<mx:DataGridColumn dataField="speed" sortable="true" />
+			<mx:DataGridColumn dataField="dist" sortable="true" />
+			<mx:DataGridColumn dataField="duration" sortable="true"/>
+			<mx:DataGridColumn dataField="speed" sortable="true"/>
+			<mx:DataGridColumn dataField="loc" sortable="true"/>
+			<mx:DataGridColumn dataField="type" sortable="true"  />
+		</mx:columns> 
+  </mx:DataGrid>
+</mx:Panel>

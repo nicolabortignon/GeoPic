@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/91/trunk/FlexVersion/src/roekensk/geo/webservices
+END
+XMLElevationServiceImplementation.as
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/webservices/XMLElevationServiceImplementation.as
+END
+GpxService.as
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/91/trunk/FlexVersion/src/roekensk/geo/webservices/GpxService.as
+END
+ElevationPointService.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/webservices/ElevationPointService.as
+END
+TrackService.as
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/webservices/TrackService.as
+END
+ElevationService.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/webservices/ElevationService.as
+END
+TripXmlLoaderService.as
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/webservices/TripXmlLoaderService.as
+END
+XmlLoaderService.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/webservices/XmlLoaderService.as
+END
+ElevationTrackService.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/webservices/ElevationTrackService.as
+END

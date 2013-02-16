@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:comp="roekensk.flex.components.*" creationComplete="init()">
+	
+	
+	<mx:HTTPService id="httpService" url="listTracks.php" resultFormat="xml" result="resultHandler(event);"></mx:HTTPService>
+	
+	<mx:Script>
+		<![CDATA[
+import flash.events.Event;
+import mx.controls.dataGridClasses.DataGridColumn;
+import mx.rpc.events.ResultEvent;
+import roekensk.flex.entities.TrackInfo;
+import roekensk.flex.entities.User;
+
+		[Bindable]
+		private var trackList:Array;
+		[Bindable]
+		private var xmlTrackList:XML;
+		
+		private function init():void {
+			httpService.send();
+		}
+		private function resultHandler(e:ResultEvent):void {
+			var list:XML = new XML(e.message.body);
+			grid.dataProvider = list.descendants("track");
+
+		}
+		/*private function parseList(list:XMLList):void {
+			var xmlItem:XML;
+			
+			for each(xmlItem in list) {
+				xmlTrackList = xmlItem;
+				parseXML(xmlItem);
+				//trackInfo = new TrackInfo();
+			}
+		}
+		private function parseXML(xml:XML):void {
+			var array:Array = new Array(), trackInfo:TrackInfo, user:User,
+			spd:String, date:String, dist:String, time:String, id:int, url:String, type:String;
+			
+			trace(xml.track.length());
+			var i:int,l:int=xml.track.length();
+			for (i = 0; i < l; i++) {
+				id = xml.track[i].attribute("id");
+				date = xml.track[i].attribute("date");
+				spd = xml.track[i].speed;
+				dist = xml.track[i].dist;
+				type = xml.track[i].type;
+				url = xml.track[i].file;
+				
+				user = new User(xml.track[i].user.attribute("id"), xml.track[i].user.username);
+				
+				trackInfo = new TrackInfo(user, date, dist, time, spd, type);
+				trackInfo.url = url;
+				trackInfo.id = id;
+				
+				array.push(trackInfo);
+			}
+			
+		}*/
+		private function faultHandler(e:ResultEvent):void {
+			trace("fout");
+		}
+		private function showUserInfo(e:Event):void {
+			var selected:int = e.currentTarget.selectedIndex;
+			trace(selected);
+		}
+			
+		]]>
+	</mx:Script>
+
+	<mx:DataGrid id="grid" x="10" y="10"  itemClick="showUserInfo(event)">
+		<mx:columns> 
+			<mx:DataGridColumn dataField="@id" sortable="true" width="30"></mx:DataGridColumn>
+			<mx:DataGridColumn dataField="@date" sortable="true"/>
+			<comp:DataGridColumnNested dataField="user.username" sortable="true">
+			</comp:DataGridColumnNested>
+			<mx:DataGridColumn dataField="speed" sortable="true" />
+			<mx:DataGridColumn dataField="dist" sortable="true" />
+			<mx:DataGridColumn dataField="duration" sortable="true"/>
+			<mx:DataGridColumn dataField="speed" sortable="true"/>
+			<mx:DataGridColumn dataField="loc" sortable="true"/>
+			<mx:DataGridColumn dataField="type" sortable="true"  />
+		</mx:columns> 
+  </mx:DataGrid>
+</mx:Panel>

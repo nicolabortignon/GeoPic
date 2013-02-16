@@ -1,0 +1,16 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <getElevationResponse xmlns="http://gisdata.usgs.gov/XMLWebServices2/">
+      <getElevationResult>
+        <USGS_Elevation_Web_Service_Query>
+          <Elevation_Query x="4.522445" y="50.810392">
+            <Data_Source>SRTM.C_1TO19_3</Data_Source>
+            <Data_ID>SRTM.C_1TO19_3</Data_ID>
+            <Elevation>99</Elevation>
+            <Units>METERS</Units>
+          </Elevation_Query>
+        </USGS_Elevation_Web_Service_Query>
+      </getElevationResult>
+    </getElevationResponse>
+  </soap:Body>
+</soap:Envelope>

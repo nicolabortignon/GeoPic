@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:comp="roekensk.flex.components.*" creationComplete="init()" >
+	<mx:Script>
+		<![CDATA[			
+		import flash.events.Event;
+		import roekensk.display.plot.PlotContainer;
+		import roekensk.flex.utils.SpriteUIComponent;
+		import roekensk.display.plot.InteractivePlotContainer;
+		import roekensk.geo.display.PlotSpeed;
+		import roekensk.geo.google.utils.GMapsUtils;
+		import roekensk.geo.objects.TrackPoint;
+		import roekensk.geo.webservices.GpxService;
+		import roekensk.utils.Utils;
+		import roekensk.views.events.ScreenEvent;
+		import roekensk.views.TrackScreen;
+		import com.google.maps.LatLng;
+		
+		private var gpxServ:GpxService;
+		
+		private var plotCont:PlotContainer;
+
+		private function init():void {
+			trace("Viewer initializing");
+			gpxServ = new GpxService(); 
+		}
+		public function showTrack(file:String):void {
+			Utils.removeChildren(viewerContent);
+			var url:String = "http://krob.xtreemhost.com/flex/";
+			
+			//gpxServ.addEventListener(Event.COMPLETE, onGpxLoaded);
+			//gpxServ.load(url + file);
+			
+			var trkScrn:TrackScreen = new TrackScreen(url + file);
+			trkScrn.addEventListener(ScreenEvent.COMPONENTS_COMPLETE, onComponentsComplete);
+			
+		}
+		private function onGpxLoaded(e:Event):void {
+			/*trace(gpxServ.getTrack().length);
+			var spdPlot:PlotSpeed = new PlotSpeed(gpxServ.getTrack());
+			plotCont = new InteractivePlotContainer(400, 100, spdPlot);
+			
+			var ll:LatLng = GMapsUtils.convertTrackPointToLatLng(gpxServ.getTrack()[0] as TrackPoint);
+			map.setCenter(ll);
+			
+			viewerContent.addChild(new SpriteUIComponent(plotCont));*/
+			
+		}
+		private function onComponentsComplete(e:Event):void {
+			viewerContent.addChild(new SpriteUIComponent(e.target as Sprite));
+			
+		}
+			
+		]]>
+	</mx:Script>
+		<!--<maps:Map xmlns:maps="com.google.maps.*" mapevent_mappreinitialize="onMapPreinitialize(event)" 
+         id="map" width="800" height="500" key="your_api_key"/>
+  <mx:Script>
+        <![CDATA[
+
+        import com.google.maps.LatLng;
+        import com.google.maps.Map;
+        import com.google.maps.MapEvent;
+        import com.google.maps.MapType;
+        import com.google.maps.MapOptions;
+
+        private function onMapPreinitialize(event:Event):void {
+          var myMapOptions:MapOptions = new MapOptions();
+          myMapOptions.zoom = 14;
+          myMapOptions.center = new LatLng(40.736072,-73.992062);
+          myMapOptions.mapType = MapType.NORMAL_MAP_TYPE;
+          this.map.setInitOptions(myMapOptions);
+        }
+        
+        ]]>
+  </mx:Script>-->
+	<mx:Panel id="viewerContent">
+	
+	</mx:Panel>
+</mx:Panel>

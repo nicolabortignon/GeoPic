@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/93/trunk/FlexVersion/src/roekensk/geo/utils
+END
+DouglasPeucker.as
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/90/trunk/FlexVersion/src/roekensk/geo/utils/DouglasPeucker.as
+END
+TravelType.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/utils/TravelType.as
+END
+GeoConstants.as
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/82/trunk/FlexVersion/src/roekensk/geo/utils/GeoConstants.as
+END
+GeoCalculation.as
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/93/trunk/FlexVersion/src/roekensk/geo/utils/GeoCalculation.as
+END

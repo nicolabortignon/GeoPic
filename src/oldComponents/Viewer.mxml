@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas id="viewerCanvas" xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()">
+	<mx:Script>
+		<![CDATA[
+import roekensk.views.TrackScreen;
+import flex.utils.SpriteUIComponent;
+		private var viewer:SpriteUIComponent = new SpriteUIComponent(new TrackScreen());
+		
+		private function init():void {
+			viewerCanvas.addChild(viewer);
+		}
+		]]>
+	</mx:Script>
+</mx:Canvas>

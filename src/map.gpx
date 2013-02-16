@@ -1,0 +1,2118 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Galarina - http://www.galarina.eu" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<trk>
+  <name>Rijswijk</name>
+  <trkseg>
+    <trkpt lat="52.03909003" lon="4.32159410">
+      <ele>20.53</ele>
+      <time>2013-02-05T16:27:49Z</time>
+      <name>GLT0000001</name>
+    </trkpt>
+    <trkpt lat="52.03807400" lon="4.32509439">
+      <ele>44.65</ele>
+      <time>2013-02-05T16:27:50Z</time>
+      <name>GLT0000002</name>
+    </trkpt>
+    <trkpt lat="52.03827416" lon="4.32485199">
+      <ele>65.72</ele>
+      <time>2013-02-05T16:27:51Z</time>
+      <name>GLT0000003</name>
+    </trkpt>
+    <trkpt lat="52.03825522" lon="4.32455636">
+      <ele>67.99</ele>
+      <time>2013-02-05T16:27:52Z</time>
+      <name>GLT0000004</name>
+    </trkpt>
+    <trkpt lat="52.03839126" lon="4.32464353">
+      <ele>95.82</ele>
+      <time>2013-02-05T16:27:53Z</time>
+      <name>GLT0000005</name>
+    </trkpt>
+    <trkpt lat="52.03846464" lon="4.32458301">
+      <ele>102.03</ele>
+      <time>2013-02-05T16:27:54Z</time>
+      <name>GLT0000006</name>
+    </trkpt>
+    <trkpt lat="52.03849494" lon="4.32422485">
+      <ele>99.04</ele>
+      <time>2013-02-05T16:27:55Z</time>
+      <name>GLT0000007</name>
+    </trkpt>
+    <trkpt lat="52.03864908" lon="4.32568179">
+      <ele>143.86</ele>
+      <time>2013-02-05T16:27:57Z</time>
+      <name>GLT0000008</name>
+    </trkpt>
+    <trkpt lat="52.03852474" lon="4.32600793">
+      <ele>101.08</ele>
+      <time>2013-02-05T16:27:59Z</time>
+      <name>GLT0000009</name>
+    </trkpt>
+    <trkpt lat="52.03878667" lon="4.32522929">
+      <ele>132.23</ele>
+      <time>2013-02-05T16:28:02Z</time>
+      <name>GLT0000010</name>
+    </trkpt>
+    <trkpt lat="52.03833455" lon="4.32660540">
+      <ele>90.38</ele>
+      <time>2013-02-05T16:28:03Z</time>
+      <name>GLT0000011</name>
+    </trkpt>
+    <trkpt lat="52.03817056" lon="4.32581993">
+      <ele>90.15</ele>
+      <time>2013-02-05T16:28:20Z</time>
+      <name>GLT0000012</name>
+    </trkpt>
+    <trkpt lat="52.03800464" lon="4.32518634">
+      <ele>88.73</ele>
+      <time>2013-02-05T16:28:21Z</time>
+      <name>GLT0000013</name>
+    </trkpt>
+    <trkpt lat="52.03800464" lon="4.32518634">
+      <ele>88.73</ele>
+      <time>2013-02-05T16:28:21Z</time>
+      <name>GLT0000014</name>
+    </trkpt>
+    <trkpt lat="52.03801759" lon="4.32505223">
+      <ele>86.31</ele>
+      <time>2013-02-05T16:28:26Z</time>
+      <name>GLT0000015</name>
+    </trkpt>
+    <trkpt lat="52.03804353" lon="4.32509020">
+      <ele>77.77</ele>
+      <time>2013-02-05T16:28:31Z</time>
+      <name>GLT0000016</name>
+    </trkpt>
+    <trkpt lat="52.03749104" lon="4.32524367">
+      <ele>32.12</ele>
+      <time>2013-02-05T16:28:39Z</time>
+      <name>GLT0000017</name>
+    </trkpt>
+    <trkpt lat="52.03738769" lon="4.32523454">
+      <ele>15.26</ele>
+      <time>2013-02-05T16:28:44Z</time>
+      <name>GLT0000018</name>
+    </trkpt>
+    <trkpt lat="52.03730383" lon="4.32517041">
+      <ele>3.11</ele>
+      <time>2013-02-05T16:28:52Z</time>
+      <name>GLT0000019</name>
+    </trkpt>
+    <trkpt lat="52.03724700" lon="4.32503790">
+      <ele>2.01</ele>
+      <time>2013-02-05T16:29:01Z</time>
+      <name>GLT0000020</name>
+    </trkpt>
+    <trkpt lat="52.03722160" lon="4.32489457">
+      <ele>1.14</ele>
+      <time>2013-02-05T16:29:05Z</time>
+      <name>GLT0000021</name>
+    </trkpt>
+    <trkpt lat="52.03722902" lon="4.32473372">
+      <ele>1.51</ele>
+      <time>2013-02-05T16:29:10Z</time>
+      <name>GLT0000022</name>
+    </trkpt>
+    <trkpt lat="52.03722026" lon="4.32458184">
+      <ele>-2.64</ele>
+      <time>2013-02-05T16:29:17Z</time>
+      <name>GLT0000023</name>
+    </trkpt>
+    <trkpt lat="52.03726322" lon="4.32444563">
+      <ele>-4.55</ele>
+      <time>2013-02-05T16:29:24Z</time>
+      <name>GLT0000024</name>
+    </trkpt>
+    <trkpt lat="52.03723941" lon="4.32429610">
+      <ele>-13.94</ele>
+      <time>2013-02-05T16:29:34Z</time>
+      <name>GLT0000025</name>
+    </trkpt>
+    <trkpt lat="52.03726984" lon="4.32411572">
+      <ele>-13.14</ele>
+      <time>2013-02-05T16:29:40Z</time>
+      <name>GLT0000026</name>
+    </trkpt>
+    <trkpt lat="52.03734959" lon="4.32401581">
+      <ele>-11.06</ele>
+      <time>2013-02-05T16:29:44Z</time>
+      <name>GLT0000027</name>
+    </trkpt>
+    <trkpt lat="52.03743610" lon="4.32390902">
+      <ele>-8.37</ele>
+      <time>2013-02-05T16:29:49Z</time>
+      <name>GLT0000028</name>
+    </trkpt>
+    <trkpt lat="52.03747930" lon="4.32377567">
+      <ele>-8.18</ele>
+      <time>2013-02-05T16:30:00Z</time>
+      <name>GLT0000029</name>
+    </trkpt>
+    <trkpt lat="52.03744674" lon="4.32361105">
+      <ele>-0.50</ele>
+      <time>2013-02-05T16:30:09Z</time>
+      <name>GLT0000030</name>
+    </trkpt>
+    <trkpt lat="52.03739041" lon="4.32349085">
+      <ele>-1.63</ele>
+      <time>2013-02-05T16:30:13Z</time>
+      <name>GLT0000031</name>
+    </trkpt>
+    <trkpt lat="52.03736619" lon="4.32334794">
+      <ele>-1.50</ele>
+      <time>2013-02-05T16:30:23Z</time>
+      <name>GLT0000032</name>
+    </trkpt>
+    <trkpt lat="52.03736284" lon="4.32317678">
+      <ele>-5.61</ele>
+      <time>2013-02-05T16:30:37Z</time>
+      <name>GLT0000033</name>
+    </trkpt>
+    <trkpt lat="52.03736703" lon="4.32301635">
+      <ele>-4.51</ele>
+      <time>2013-02-05T16:30:44Z</time>
+      <name>GLT0000034</name>
+    </trkpt>
+    <trkpt lat="52.03766894" lon="4.32180545">
+      <ele>-4.16</ele>
+      <time>2013-02-05T16:32:19Z</time>
+      <name>GLT0000035</name>
+    </trkpt>
+    <trkpt lat="52.03766421" lon="4.32180919">
+      <ele>-3.81</ele>
+      <time>2013-02-05T16:32:21Z</time>
+      <name>GLT0000036</name>
+    </trkpt>
+    <trkpt lat="52.03765512" lon="4.32184448">
+      <ele>-3.84</ele>
+      <time>2013-02-05T16:32:27Z</time>
+      <name>GLT0000037</name>
+    </trkpt>
+    <trkpt lat="52.03796751" lon="4.32164364">
+      <ele>-2.96</ele>
+      <time>2013-02-05T16:32:31Z</time>
+      <name>GLT0000038</name>
+    </trkpt>
+    <trkpt lat="52.03799605" lon="4.32166711">
+      <ele>-2.63</ele>
+      <time>2013-02-05T16:32:35Z</time>
+      <name>GLT0000039</name>
+    </trkpt>
+    <trkpt lat="52.03795251" lon="4.32153929">
+      <ele>-3.47</ele>
+      <time>2013-02-05T16:32:54Z</time>
+      <name>GLT0000040</name>
+    </trkpt>
+    <trkpt lat="52.03804148" lon="4.32149990">
+      <ele>-4.09</ele>
+      <time>2013-02-05T16:33:04Z</time>
+      <name>GLT0000041</name>
+    </trkpt>
+    <trkpt lat="52.04156429" lon="4.31619436">
+      <ele>-5.35</ele>
+      <time>2013-02-05T16:35:46Z</time>
+      <name>GLT0000042</name>
+    </trkpt>
+    <trkpt lat="52.04180923" lon="4.31613263">
+      <ele>-5.67</ele>
+      <time>2013-02-05T16:35:47Z</time>
+      <name>GLT0000043</name>
+    </trkpt>
+    <trkpt lat="52.04180923" lon="4.31613263">
+      <ele>-5.67</ele>
+      <time>2013-02-05T16:35:47Z</time>
+      <name>GLT0000044</name>
+    </trkpt>
+    <trkpt lat="52.04274570" lon="4.31549870">
+      <ele>-8.41</ele>
+      <time>2013-02-05T16:35:52Z</time>
+      <name>GLT0000045</name>
+    </trkpt>
+    <trkpt lat="52.04347002" lon="4.31449221">
+      <ele>-10.21</ele>
+      <time>2013-02-05T16:35:57Z</time>
+      <name>GLT0000046</name>
+    </trkpt>
+    <trkpt lat="52.04426219" lon="4.31351010">
+      <ele>-3.83</ele>
+      <time>2013-02-05T16:36:02Z</time>
+      <name>GLT0000047</name>
+    </trkpt>
+    <trkpt lat="52.04510189" lon="4.31260217">
+      <ele>0.98</ele>
+      <time>2013-02-05T16:36:07Z</time>
+      <name>GLT0000048</name>
+    </trkpt>
+    <trkpt lat="52.04598790" lon="4.31183891">
+      <ele>7.23</ele>
+      <time>2013-02-05T16:36:12Z</time>
+      <name>GLT0000049</name>
+    </trkpt>
+    <trkpt lat="52.04688045" lon="4.31112922">
+      <ele>2.07</ele>
+      <time>2013-02-05T16:36:17Z</time>
+      <name>GLT0000050</name>
+    </trkpt>
+    <trkpt lat="52.04780648" lon="4.31051826">
+      <ele>-2.63</ele>
+      <time>2013-02-05T16:36:22Z</time>
+      <name>GLT0000051</name>
+    </trkpt>
+    <trkpt lat="52.04868302" lon="4.30999699">
+      <ele>-2.01</ele>
+      <time>2013-02-05T16:36:27Z</time>
+      <name>GLT0000052</name>
+    </trkpt>
+    <trkpt lat="52.04953680" lon="4.30961763">
+      <ele>-3.00</ele>
+      <time>2013-02-05T16:36:32Z</time>
+      <name>GLT0000053</name>
+    </trkpt>
+    <trkpt lat="52.05033526" lon="4.30930624">
+      <ele>-4.68</ele>
+      <time>2013-02-05T16:36:37Z</time>
+      <name>GLT0000054</name>
+    </trkpt>
+    <trkpt lat="52.05104588" lon="4.30899845">
+      <ele>-3.35</ele>
+      <time>2013-02-05T16:36:42Z</time>
+      <name>GLT0000055</name>
+    </trkpt>
+    <trkpt lat="52.05169028" lon="4.30883870">
+      <ele>-3.33</ele>
+      <time>2013-02-05T16:36:47Z</time>
+      <name>GLT0000056</name>
+    </trkpt>
+    <trkpt lat="52.05228145" lon="4.30867827">
+      <ele>-4.51</ele>
+      <time>2013-02-05T16:36:52Z</time>
+      <name>GLT0000057</name>
+    </trkpt>
+    <trkpt lat="52.05281504" lon="4.30858313">
+      <ele>-4.20</ele>
+      <time>2013-02-05T16:36:57Z</time>
+      <name>GLT0000058</name>
+    </trkpt>
+    <trkpt lat="52.05325811" lon="4.30852957">
+      <ele>-3.15</ele>
+      <time>2013-02-05T16:37:02Z</time>
+      <name>GLT0000059</name>
+    </trkpt>
+    <trkpt lat="52.05360910" lon="4.30852228">
+      <ele>-2.77</ele>
+      <time>2013-02-05T16:37:07Z</time>
+      <name>GLT0000060</name>
+    </trkpt>
+    <trkpt lat="52.05384803" lon="4.30853343">
+      <ele>-2.37</ele>
+      <time>2013-02-05T16:37:12Z</time>
+      <name>GLT0000061</name>
+    </trkpt>
+    <trkpt lat="52.05385813" lon="4.30855413">
+      <ele>-3.33</ele>
+      <time>2013-02-05T16:37:17Z</time>
+      <name>GLT0000062</name>
+    </trkpt>
+    <trkpt lat="52.05385126" lon="4.30860450">
+      <ele>-2.90</ele>
+      <time>2013-02-05T16:37:22Z</time>
+      <name>GLT0000063</name>
+    </trkpt>
+    <trkpt lat="52.05393948" lon="4.30852982">
+      <ele>-9.77</ele>
+      <time>2013-02-05T16:38:14Z</time>
+      <name>GLT0000064</name>
+    </trkpt>
+    <trkpt lat="52.05403989" lon="4.30852680">
+      <ele>-9.64</ele>
+      <time>2013-02-05T16:38:17Z</time>
+      <name>GLT0000065</name>
+    </trkpt>
+    <trkpt lat="52.05415426" lon="4.30851792">
+      <ele>-9.12</ele>
+      <time>2013-02-05T16:38:18Z</time>
+      <name>GLT0000066</name>
+    </trkpt>
+    <trkpt lat="52.05431105" lon="4.30852278">
+      <ele>-9.51</ele>
+      <time>2013-02-05T16:38:20Z</time>
+      <name>GLT0000067</name>
+    </trkpt>
+    <trkpt lat="52.05431105" lon="4.30852278">
+      <ele>-9.51</ele>
+      <time>2013-02-05T16:38:20Z</time>
+      <name>GLT0000068</name>
+    </trkpt>
+    <trkpt lat="52.05495968" lon="4.30860031">
+      <ele>-10.89</ele>
+      <time>2013-02-05T16:38:25Z</time>
+      <name>GLT0000069</name>
+    </trkpt>
+    <trkpt lat="52.05576816" lon="4.30863166">
+      <ele>-10.27</ele>
+      <time>2013-02-05T16:38:30Z</time>
+      <name>GLT0000070</name>
+    </trkpt>
+    <trkpt lat="52.05666748" lon="4.30838236">
+      <ele>-9.65</ele>
+      <time>2013-02-05T16:38:35Z</time>
+      <name>GLT0000071</name>
+    </trkpt>
+    <trkpt lat="52.05756461" lon="4.30898169">
+      <ele>-9.40</ele>
+      <time>2013-02-05T16:38:40Z</time>
+      <name>GLT0000072</name>
+    </trkpt>
+    <trkpt lat="52.05853041" lon="4.30926768">
+      <ele>-5.28</ele>
+      <time>2013-02-05T16:38:45Z</time>
+      <name>GLT0000073</name>
+    </trkpt>
+    <trkpt lat="52.05945598" lon="4.30961922">
+      <ele>-2.88</ele>
+      <time>2013-02-05T16:38:50Z</time>
+      <name>GLT0000074</name>
+    </trkpt>
+    <trkpt lat="52.06030260" lon="4.31001870">
+      <ele>-1.67</ele>
+      <time>2013-02-05T16:38:55Z</time>
+      <name>GLT0000075</name>
+    </trkpt>
+    <trkpt lat="52.06094612" lon="4.31039647">
+      <ele>-2.57</ele>
+      <time>2013-02-05T16:39:00Z</time>
+      <name>GLT0000076</name>
+    </trkpt>
+    <trkpt lat="52.06168532" lon="4.31086125">
+      <ele>-3.64</ele>
+      <time>2013-02-05T16:39:05Z</time>
+      <name>GLT0000077</name>
+    </trkpt>
+    <trkpt lat="52.06241677" lon="4.31134094">
+      <ele>-2.92</ele>
+      <time>2013-02-05T16:39:10Z</time>
+      <name>GLT0000078</name>
+    </trkpt>
+    <trkpt lat="52.06308694" lon="4.31199708">
+      <ele>-4.26</ele>
+      <time>2013-02-05T16:39:15Z</time>
+      <name>GLT0000079</name>
+    </trkpt>
+    <trkpt lat="52.06373184" lon="4.31266889">
+      <ele>-5.62</ele>
+      <time>2013-02-05T16:39:20Z</time>
+      <name>GLT0000080</name>
+    </trkpt>
+    <trkpt lat="52.06433614" lon="4.31333173">
+      <ele>-7.55</ele>
+      <time>2013-02-05T16:39:25Z</time>
+      <name>GLT0000081</name>
+    </trkpt>
+    <trkpt lat="52.06496067" lon="4.31401670">
+      <ele>-6.93</ele>
+      <time>2013-02-05T16:39:30Z</time>
+      <name>GLT0000082</name>
+    </trkpt>
+    <trkpt lat="52.06558496" lon="4.31474391">
+      <ele>-6.93</ele>
+      <time>2013-02-05T16:39:35Z</time>
+      <name>GLT0000083</name>
+    </trkpt>
+    <trkpt lat="52.06558496" lon="4.31474391">
+      <ele>-6.93</ele>
+      <time>2013-02-05T16:39:35Z</time>
+      <name>GLT0000084</name>
+    </trkpt>
+    <trkpt lat="52.06613171" lon="4.31550398">
+      <ele>-6.80</ele>
+      <time>2013-02-05T16:39:40Z</time>
+      <name>GLT0000085</name>
+    </trkpt>
+    <trkpt lat="52.06613171" lon="4.31550398">
+      <ele>-6.80</ele>
+      <time>2013-02-05T16:39:40Z</time>
+      <name>GLT0000086</name>
+    </trkpt>
+    <trkpt lat="52.06661451" lon="4.31632189">
+      <ele>-6.14</ele>
+      <time>2013-02-05T16:39:45Z</time>
+      <name>GLT0000087</name>
+    </trkpt>
+    <trkpt lat="52.06661451" lon="4.31632189">
+      <ele>-6.14</ele>
+      <time>2013-02-05T16:39:45Z</time>
+      <name>GLT0000088</name>
+    </trkpt>
+    <trkpt lat="52.06701265" lon="4.31703628">
+      <ele>-6.20</ele>
+      <time>2013-02-05T16:39:50Z</time>
+      <name>GLT0000089</name>
+    </trkpt>
+    <trkpt lat="52.06701265" lon="4.31703628">
+      <ele>-6.20</ele>
+      <time>2013-02-05T16:39:50Z</time>
+      <name>GLT0000090</name>
+    </trkpt>
+    <trkpt lat="52.06737625" lon="4.31777230">
+      <ele>-5.30</ele>
+      <time>2013-02-05T16:39:55Z</time>
+      <name>GLT0000091</name>
+    </trkpt>
+    <trkpt lat="52.06737625" lon="4.31777230">
+      <ele>-5.30</ele>
+      <time>2013-02-05T16:39:56Z</time>
+      <name>GLT0000092</name>
+    </trkpt>
+    <trkpt lat="52.06774292" lon="4.31842449">
+      <ele>-6.77</ele>
+      <time>2013-02-05T16:40:00Z</time>
+      <name>GLT0000093</name>
+    </trkpt>
+    <trkpt lat="52.06774292" lon="4.31842449">
+      <ele>-6.77</ele>
+      <time>2013-02-05T16:40:01Z</time>
+      <name>GLT0000094</name>
+    </trkpt>
+    <trkpt lat="52.06807866" lon="4.31899538">
+      <ele>-7.32</ele>
+      <time>2013-02-05T16:40:05Z</time>
+      <name>GLT0000095</name>
+    </trkpt>
+    <trkpt lat="52.06807866" lon="4.31899538">
+      <ele>-7.32</ele>
+      <time>2013-02-05T16:40:06Z</time>
+      <name>GLT0000096</name>
+    </trkpt>
+    <trkpt lat="52.06838963" lon="4.31963216">
+      <ele>-6.67</ele>
+      <time>2013-02-05T16:40:10Z</time>
+      <name>GLT0000097</name>
+    </trkpt>
+    <trkpt lat="52.06838963" lon="4.31963216">
+      <ele>-6.67</ele>
+      <time>2013-02-05T16:40:11Z</time>
+      <name>GLT0000098</name>
+    </trkpt>
+    <trkpt lat="52.06860777" lon="4.32028041">
+      <ele>-6.96</ele>
+      <time>2013-02-05T16:40:15Z</time>
+      <name>GLT0000099</name>
+    </trkpt>
+    <trkpt lat="52.06860777" lon="4.32028041">
+      <ele>-6.96</ele>
+      <time>2013-02-05T16:40:16Z</time>
+      <name>GLT0000100</name>
+    </trkpt>
+    <trkpt lat="52.06882741" lon="4.32079908">
+      <ele>-7.24</ele>
+      <time>2013-02-05T16:40:20Z</time>
+      <name>GLT0000101</name>
+    </trkpt>
+    <trkpt lat="52.06882741" lon="4.32079908">
+      <ele>-7.24</ele>
+      <time>2013-02-05T16:40:21Z</time>
+      <name>GLT0000102</name>
+    </trkpt>
+    <trkpt lat="52.06905343" lon="4.32124307">
+      <ele>-7.16</ele>
+      <time>2013-02-05T16:40:25Z</time>
+      <name>GLT0000103</name>
+    </trkpt>
+    <trkpt lat="52.06905343" lon="4.32124307">
+      <ele>-7.16</ele>
+      <time>2013-02-05T16:40:26Z</time>
+      <name>GLT0000104</name>
+    </trkpt>
+    <trkpt lat="52.06925732" lon="4.32170282">
+      <ele>-7.08</ele>
+      <time>2013-02-05T16:40:30Z</time>
+      <name>GLT0000105</name>
+    </trkpt>
+    <trkpt lat="52.06925732" lon="4.32170282">
+      <ele>-7.08</ele>
+      <time>2013-02-05T16:40:31Z</time>
+      <name>GLT0000106</name>
+    </trkpt>
+    <trkpt lat="52.06924588" lon="4.32171958">
+      <ele>-7.60</ele>
+      <time>2013-02-05T16:40:35Z</time>
+      <name>GLT0000107</name>
+    </trkpt>
+    <trkpt lat="52.06924588" lon="4.32171958">
+      <ele>-7.60</ele>
+      <time>2013-02-05T16:40:36Z</time>
+      <name>GLT0000108</name>
+    </trkpt>
+    <trkpt lat="52.06919123" lon="4.32184112">
+      <ele>8.85</ele>
+      <time>2013-02-05T16:40:54Z</time>
+      <name>GLT0000109</name>
+    </trkpt>
+    <trkpt lat="52.06912082" lon="4.32194447">
+      <ele>10.50</ele>
+      <time>2013-02-05T16:41:01Z</time>
+      <name>GLT0000110</name>
+    </trkpt>
+    <trkpt lat="52.06903218" lon="4.32197616">
+      <ele>8.35</ele>
+      <time>2013-02-05T16:41:11Z</time>
+      <name>GLT0000111</name>
+    </trkpt>
+    <trkpt lat="52.06895218" lon="4.32190818">
+      <ele>4.40</ele>
+      <time>2013-02-05T16:42:12Z</time>
+      <name>GLT0000112</name>
+    </trkpt>
+    <trkpt lat="52.06903880" lon="4.32196291">
+      <ele>1.60</ele>
+      <time>2013-02-05T16:42:42Z</time>
+      <name>GLT0000113</name>
+    </trkpt>
+    <trkpt lat="52.06912841" lon="4.32200583">
+      <ele>2.62</ele>
+      <time>2013-02-05T16:43:00Z</time>
+      <name>GLT0000114</name>
+    </trkpt>
+    <trkpt lat="52.06906274" lon="4.32211446">
+      <ele>9.34</ele>
+      <time>2013-02-05T16:43:39Z</time>
+      <name>GLT0000115</name>
+    </trkpt>
+    <trkpt lat="52.06905884" lon="4.32226567">
+      <ele>13.03</ele>
+      <time>2013-02-05T16:44:02Z</time>
+      <name>GLT0000116</name>
+    </trkpt>
+    <trkpt lat="52.06913339" lon="4.32238435">
+      <ele>13.63</ele>
+      <time>2013-02-05T16:44:06Z</time>
+      <name>GLT0000117</name>
+    </trkpt>
+    <trkpt lat="52.06920301" lon="4.32248318">
+      <ele>16.45</ele>
+      <time>2013-02-05T16:44:09Z</time>
+      <name>GLT0000118</name>
+    </trkpt>
+    <trkpt lat="52.06929144" lon="4.32260673">
+      <ele>15.24</ele>
+      <time>2013-02-05T16:44:12Z</time>
+      <name>GLT0000119</name>
+    </trkpt>
+    <trkpt lat="52.06937316" lon="4.32269976">
+      <ele>15.20</ele>
+      <time>2013-02-05T16:44:13Z</time>
+      <name>GLT0000120</name>
+    </trkpt>
+    <trkpt lat="52.06951125" lon="4.32291342">
+      <ele>15.93</ele>
+      <time>2013-02-05T16:44:15Z</time>
+      <name>GLT0000121</name>
+    </trkpt>
+    <trkpt lat="52.06951125" lon="4.32291342">
+      <ele>15.93</ele>
+      <time>2013-02-05T16:44:15Z</time>
+      <name>GLT0000122</name>
+    </trkpt>
+    <trkpt lat="52.06988722" lon="4.32356159">
+      <ele>14.69</ele>
+      <time>2013-02-05T16:44:20Z</time>
+      <name>GLT0000123</name>
+    </trkpt>
+    <trkpt lat="52.07034508" lon="4.32424455">
+      <ele>11.02</ele>
+      <time>2013-02-05T16:44:25Z</time>
+      <name>GLT0000124</name>
+    </trkpt>
+    <trkpt lat="52.07082411" lon="4.32507419">
+      <ele>10.39</ele>
+      <time>2013-02-05T16:44:30Z</time>
+      <name>GLT0000125</name>
+    </trkpt>
+    <trkpt lat="52.07134710" lon="4.32612000">
+      <ele>5.65</ele>
+      <time>2013-02-05T16:44:35Z</time>
+      <name>GLT0000126</name>
+    </trkpt>
+    <trkpt lat="52.07181510" lon="4.32719481">
+      <ele>4.86</ele>
+      <time>2013-02-05T16:44:40Z</time>
+      <name>GLT0000127</name>
+    </trkpt>
+    <trkpt lat="52.07232581" lon="4.32835906">
+      <ele>2.21</ele>
+      <time>2013-02-05T16:44:45Z</time>
+      <name>GLT0000128</name>
+    </trkpt>
+    <trkpt lat="52.07286774" lon="4.32958550">
+      <ele>1.15</ele>
+      <time>2013-02-05T16:44:50Z</time>
+      <name>GLT0000129</name>
+    </trkpt>
+    <trkpt lat="52.07344668" lon="4.33086357">
+      <ele>-0.71</ele>
+      <time>2013-02-05T16:44:55Z</time>
+      <name>GLT0000130</name>
+    </trkpt>
+    <trkpt lat="52.07402067" lon="4.33218431">
+      <ele>-2.65</ele>
+      <time>2013-02-05T16:45:00Z</time>
+      <name>GLT0000131</name>
+    </trkpt>
+    <trkpt lat="52.07459173" lon="4.33345685">
+      <ele>-3.42</ele>
+      <time>2013-02-05T16:45:05Z</time>
+      <name>GLT0000132</name>
+    </trkpt>
+    <trkpt lat="52.07515114" lon="4.33466812">
+      <ele>-1.56</ele>
+      <time>2013-02-05T16:45:10Z</time>
+      <name>GLT0000133</name>
+    </trkpt>
+    <trkpt lat="52.07568955" lon="4.33587855">
+      <ele>-0.99</ele>
+      <time>2013-02-05T16:45:15Z</time>
+      <name>GLT0000134</name>
+    </trkpt>
+    <trkpt lat="52.07620722" lon="4.33706467">
+      <ele>-0.30</ele>
+      <time>2013-02-05T16:45:20Z</time>
+      <name>GLT0000135</name>
+    </trkpt>
+    <trkpt lat="52.07670456" lon="4.33813973">
+      <ele>0.21</ele>
+      <time>2013-02-05T16:45:25Z</time>
+      <name>GLT0000136</name>
+    </trkpt>
+    <trkpt lat="52.07712420" lon="4.33911706">
+      <ele>-2.94</ele>
+      <time>2013-02-05T16:45:30Z</time>
+      <name>GLT0000137</name>
+    </trkpt>
+    <trkpt lat="52.07746270" lon="4.34000152">
+      <ele>-6.48</ele>
+      <time>2013-02-05T16:45:35Z</time>
+      <name>GLT0000138</name>
+    </trkpt>
+    <trkpt lat="52.07780724" lon="4.34085698">
+      <ele>-6.55</ele>
+      <time>2013-02-05T16:45:40Z</time>
+      <name>GLT0000139</name>
+    </trkpt>
+    <trkpt lat="52.07803447" lon="4.34139300">
+      <ele>-6.41</ele>
+      <time>2013-02-05T16:45:45Z</time>
+      <name>GLT0000140</name>
+    </trkpt>
+    <trkpt lat="52.07820152" lon="4.34176172">
+      <ele>-6.03</ele>
+      <time>2013-02-05T16:45:50Z</time>
+      <name>GLT0000141</name>
+    </trkpt>
+    <trkpt lat="52.07830152" lon="4.34197948">
+      <ele>-7.10</ele>
+      <time>2013-02-05T16:45:55Z</time>
+      <name>GLT0000142</name>
+    </trkpt>
+    <trkpt lat="52.07841602" lon="4.34225785">
+      <ele>-7.80</ele>
+      <time>2013-02-05T16:46:00Z</time>
+      <name>GLT0000143</name>
+    </trkpt>
+    <trkpt lat="52.07852863" lon="4.34253864">
+      <ele>-6.11</ele>
+      <time>2013-02-05T16:46:07Z</time>
+      <name>GLT0000144</name>
+    </trkpt>
+    <trkpt lat="52.07860645" lon="4.34261751">
+      <ele>-6.12</ele>
+      <time>2013-02-05T16:46:13Z</time>
+      <name>GLT0000145</name>
+    </trkpt>
+    <trkpt lat="52.07868013" lon="4.34274115">
+      <ele>-5.43</ele>
+      <time>2013-02-05T16:46:23Z</time>
+      <name>GLT0000146</name>
+    </trkpt>
+    <trkpt lat="52.07877116" lon="4.34282857">
+      <ele>-6.46</ele>
+      <time>2013-02-05T16:46:34Z</time>
+      <name>GLT0000147</name>
+    </trkpt>
+    <trkpt lat="52.07867900" lon="4.34272874">
+      <ele>-7.86</ele>
+      <time>2013-02-05T16:46:54Z</time>
+      <name>GLT0000148</name>
+    </trkpt>
+    <trkpt lat="52.07872619" lon="4.34287014">
+      <ele>-7.85</ele>
+      <time>2013-02-05T16:47:22Z</time>
+      <name>GLT0000149</name>
+    </trkpt>
+    <trkpt lat="52.07879555" lon="4.34304524">
+      <ele>-5.77</ele>
+      <time>2013-02-05T16:47:26Z</time>
+      <name>GLT0000150</name>
+    </trkpt>
+    <trkpt lat="52.07886566" lon="4.34323132">
+      <ele>-3.84</ele>
+      <time>2013-02-05T16:47:29Z</time>
+      <name>GLT0000151</name>
+    </trkpt>
+    <trkpt lat="52.07892807" lon="4.34338010">
+      <ele>-3.18</ele>
+      <time>2013-02-05T16:47:31Z</time>
+      <name>GLT0000152</name>
+    </trkpt>
+    <trkpt lat="52.07903096" lon="4.34359551">
+      <ele>-3.50</ele>
+      <time>2013-02-05T16:47:32Z</time>
+      <name>GLT0000153</name>
+    </trkpt>
+    <trkpt lat="52.07911721" lon="4.34382132">
+      <ele>-4.19</ele>
+      <time>2013-02-05T16:47:34Z</time>
+      <name>GLT0000154</name>
+    </trkpt>
+    <trkpt lat="52.07911721" lon="4.34382132">
+      <ele>-4.19</ele>
+      <time>2013-02-05T16:47:34Z</time>
+      <name>GLT0000155</name>
+    </trkpt>
+    <trkpt lat="52.07939666" lon="4.34435986">
+      <ele>-6.02</ele>
+      <time>2013-02-05T16:47:39Z</time>
+      <name>GLT0000156</name>
+    </trkpt>
+    <trkpt lat="52.07963546" lon="4.34496076">
+      <ele>-4.15</ele>
+      <time>2013-02-05T16:47:44Z</time>
+      <name>GLT0000157</name>
+    </trkpt>
+    <trkpt lat="52.08016021" lon="4.34605334">
+      <ele>-5.64</ele>
+      <time>2013-02-05T16:47:49Z</time>
+      <name>GLT0000158</name>
+    </trkpt>
+    <trkpt lat="52.08056476" lon="4.34698557">
+      <ele>-4.54</ele>
+      <time>2013-02-05T16:47:54Z</time>
+      <name>GLT0000159</name>
+    </trkpt>
+    <trkpt lat="52.08103582" lon="4.34792376">
+      <ele>-4.93</ele>
+      <time>2013-02-05T16:47:59Z</time>
+      <name>GLT0000160</name>
+    </trkpt>
+    <trkpt lat="52.08157932" lon="4.34868988">
+      <ele>-5.78</ele>
+      <time>2013-02-05T16:48:04Z</time>
+      <name>GLT0000161</name>
+    </trkpt>
+    <trkpt lat="52.08211316" lon="4.34988131">
+      <ele>-5.61</ele>
+      <time>2013-02-05T16:48:09Z</time>
+      <name>GLT0000162</name>
+    </trkpt>
+    <trkpt lat="52.08263163" lon="4.35106613">
+      <ele>-4.74</ele>
+      <time>2013-02-05T16:48:14Z</time>
+      <name>GLT0000163</name>
+    </trkpt>
+    <trkpt lat="52.08315345" lon="4.35226532">
+      <ele>-5.54</ele>
+      <time>2013-02-05T16:48:19Z</time>
+      <name>GLT0000164</name>
+    </trkpt>
+    <trkpt lat="52.08357256" lon="4.35380199">
+      <ele>-6.65</ele>
+      <time>2013-02-05T16:48:24Z</time>
+      <name>GLT0000165</name>
+    </trkpt>
+    <trkpt lat="52.08507850" lon="4.35720328">
+      <ele>-2.74</ele>
+      <time>2013-02-05T16:48:34Z</time>
+      <name>GLT0000166</name>
+    </trkpt>
+    <trkpt lat="52.08507850" lon="4.35720328">
+      <ele>-2.74</ele>
+      <time>2013-02-05T16:48:34Z</time>
+      <name>GLT0000167</name>
+    </trkpt>
+    <trkpt lat="52.08584016" lon="4.35887187">
+      <ele>-1.03</ele>
+      <time>2013-02-05T16:48:39Z</time>
+      <name>GLT0000168</name>
+    </trkpt>
+    <trkpt lat="52.08660866" lon="4.36058261">
+      <ele>-1.67</ele>
+      <time>2013-02-05T16:48:44Z</time>
+      <name>GLT0000169</name>
+    </trkpt>
+    <trkpt lat="52.08741885" lon="4.36230510">
+      <ele>-0.93</ele>
+      <time>2013-02-05T16:48:49Z</time>
+      <name>GLT0000170</name>
+    </trkpt>
+    <trkpt lat="52.08832313" lon="4.36425087">
+      <ele>-2.19</ele>
+      <time>2013-02-05T16:48:54Z</time>
+      <name>GLT0000171</name>
+    </trkpt>
+    <trkpt lat="52.08914150" lon="4.36604862">
+      <ele>-4.14</ele>
+      <time>2013-02-05T16:48:59Z</time>
+      <name>GLT0000172</name>
+    </trkpt>
+    <trkpt lat="52.08996963" lon="4.36792717">
+      <ele>-2.09</ele>
+      <time>2013-02-05T16:49:04Z</time>
+      <name>GLT0000173</name>
+    </trkpt>
+    <trkpt lat="52.09076386" lon="4.36967715">
+      <ele>-3.42</ele>
+      <time>2013-02-05T16:49:09Z</time>
+      <name>GLT0000174</name>
+    </trkpt>
+    <trkpt lat="52.09169040" lon="4.37156601">
+      <ele>-2.88</ele>
+      <time>2013-02-05T16:49:14Z</time>
+      <name>GLT0000175</name>
+    </trkpt>
+    <trkpt lat="52.09264413" lon="4.37370658">
+      <ele>-3.32</ele>
+      <time>2013-02-05T16:49:19Z</time>
+      <name>GLT0000176</name>
+    </trkpt>
+    <trkpt lat="52.09358010" lon="4.37581790">
+      <ele>-3.88</ele>
+      <time>2013-02-05T16:49:24Z</time>
+      <name>GLT0000177</name>
+    </trkpt>
+    <trkpt lat="52.09455336" lon="4.37795855">
+      <ele>-4.24</ele>
+      <time>2013-02-05T16:49:29Z</time>
+      <name>GLT0000178</name>
+    </trkpt>
+    <trkpt lat="52.09551527" lon="4.38004238">
+      <ele>-2.64</ele>
+      <time>2013-02-05T16:49:34Z</time>
+      <name>GLT0000179</name>
+    </trkpt>
+    <trkpt lat="52.09648275" lon="4.38226609">
+      <ele>-1.74</ele>
+      <time>2013-02-05T16:49:39Z</time>
+      <name>GLT0000180</name>
+    </trkpt>
+    <trkpt lat="52.09741255" lon="4.38442360">
+      <ele>-0.16</ele>
+      <time>2013-02-05T16:49:44Z</time>
+      <name>GLT0000181</name>
+    </trkpt>
+    <trkpt lat="52.09819651" lon="4.38618715">
+      <ele>-1.89</ele>
+      <time>2013-02-05T16:49:49Z</time>
+      <name>GLT0000182</name>
+    </trkpt>
+    <trkpt lat="52.09931508" lon="4.38880834">
+      <ele>-2.38</ele>
+      <time>2013-02-05T16:49:54Z</time>
+      <name>GLT0000183</name>
+    </trkpt>
+    <trkpt lat="52.10024622" lon="4.39087247">
+      <ele>-1.85</ele>
+      <time>2013-02-05T16:49:59Z</time>
+      <name>GLT0000184</name>
+    </trkpt>
+    <trkpt lat="52.10129689" lon="4.39323331">
+      <ele>-2.08</ele>
+      <time>2013-02-05T16:50:04Z</time>
+      <name>GLT0000185</name>
+    </trkpt>
+    <trkpt lat="52.10232066" lon="4.39558343">
+      <ele>-3.29</ele>
+      <time>2013-02-05T16:50:09Z</time>
+      <name>GLT0000186</name>
+    </trkpt>
+    <trkpt lat="52.10336634" lon="4.39794562">
+      <ele>-3.69</ele>
+      <time>2013-02-05T16:50:14Z</time>
+      <name>GLT0000187</name>
+    </trkpt>
+    <trkpt lat="52.10433529" lon="4.40016808">
+      <ele>-4.18</ele>
+      <time>2013-02-05T16:50:19Z</time>
+      <name>GLT0000188</name>
+    </trkpt>
+    <trkpt lat="52.10536924" lon="4.40234805">
+      <ele>-4.90</ele>
+      <time>2013-02-05T16:50:24Z</time>
+      <name>GLT0000189</name>
+    </trkpt>
+    <trkpt lat="52.10652276" lon="4.40444319">
+      <ele>-4.13</ele>
+      <time>2013-02-05T16:50:29Z</time>
+      <name>GLT0000190</name>
+    </trkpt>
+    <trkpt lat="52.10769359" lon="4.40647345">
+      <ele>-6.27</ele>
+      <time>2013-02-05T16:50:34Z</time>
+      <name>GLT0000191</name>
+    </trkpt>
+    <trkpt lat="52.10888172" lon="4.40842208">
+      <ele>-8.65</ele>
+      <time>2013-02-05T16:50:41Z</time>
+      <name>GLT0000192</name>
+    </trkpt>
+    <trkpt lat="52.11011088" lon="4.41020130">
+      <ele>-7.71</ele>
+      <time>2013-02-05T16:50:44Z</time>
+      <name>GLT0000193</name>
+    </trkpt>
+    <trkpt lat="52.11011088" lon="4.41020130">
+      <ele>-7.71</ele>
+      <time>2013-02-05T16:50:46Z</time>
+      <name>GLT0000194</name>
+    </trkpt>
+    <trkpt lat="52.11137793" lon="4.41208773">
+      <ele>-6.42</ele>
+      <time>2013-02-05T16:50:49Z</time>
+      <name>GLT0000195</name>
+    </trkpt>
+    <trkpt lat="52.11137793" lon="4.41208773">
+      <ele>-6.42</ele>
+      <time>2013-02-05T16:50:51Z</time>
+      <name>GLT0000196</name>
+    </trkpt>
+    <trkpt lat="52.11214127" lon="4.41319834">
+      <ele>-7.28</ele>
+      <time>2013-02-05T16:50:54Z</time>
+      <name>GLT0000197</name>
+    </trkpt>
+    <trkpt lat="52.11214127" lon="4.41319834">
+      <ele>-7.28</ele>
+      <time>2013-02-05T16:50:56Z</time>
+      <name>GLT0000198</name>
+    </trkpt>
+    <trkpt lat="52.11389062" lon="4.41569933">
+      <ele>-8.77</ele>
+      <time>2013-02-05T16:51:01Z</time>
+      <name>GLT0000199</name>
+    </trkpt>
+    <trkpt lat="52.11389062" lon="4.41569933">
+      <ele>-8.77</ele>
+      <time>2013-02-05T16:51:01Z</time>
+      <name>GLT0000200</name>
+    </trkpt>
+    <trkpt lat="52.11516534" lon="4.41761753">
+      <ele>-8.91</ele>
+      <time>2013-02-05T16:51:06Z</time>
+      <name>GLT0000201</name>
+    </trkpt>
+    <trkpt lat="52.11630897" lon="4.41941251">
+      <ele>-7.05</ele>
+      <time>2013-02-05T16:51:11Z</time>
+      <name>GLT0000202</name>
+    </trkpt>
+    <trkpt lat="52.11734283" lon="4.42093676">
+      <ele>-6.31</ele>
+      <time>2013-02-05T16:51:16Z</time>
+      <name>GLT0000203</name>
+    </trkpt>
+    <trkpt lat="52.11887152" lon="4.42316886">
+      <ele>-6.11</ele>
+      <time>2013-02-05T16:51:21Z</time>
+      <name>GLT0000204</name>
+    </trkpt>
+    <trkpt lat="52.12006255" lon="4.42499871">
+      <ele>-6.91</ele>
+      <time>2013-02-05T16:51:26Z</time>
+      <name>GLT0000205</name>
+    </trkpt>
+    <trkpt lat="52.12133098" lon="4.42695329">
+      <ele>-7.83</ele>
+      <time>2013-02-05T16:51:31Z</time>
+      <name>GLT0000206</name>
+    </trkpt>
+    <trkpt lat="52.12245621" lon="4.42865012">
+      <ele>-7.72</ele>
+      <time>2013-02-05T16:51:36Z</time>
+      <name>GLT0000207</name>
+    </trkpt>
+    <trkpt lat="52.12363404" lon="4.43036011">
+      <ele>-6.30</ele>
+      <time>2013-02-05T16:51:41Z</time>
+      <name>GLT0000208</name>
+    </trkpt>
+    <trkpt lat="52.12482917" lon="4.43194446">
+      <ele>-6.16</ele>
+      <time>2013-02-05T16:51:46Z</time>
+      <name>GLT0000209</name>
+    </trkpt>
+    <trkpt lat="52.12603294" lon="4.43346175">
+      <ele>-6.35</ele>
+      <time>2013-02-05T16:51:51Z</time>
+      <name>GLT0000210</name>
+    </trkpt>
+    <trkpt lat="52.12730552" lon="4.43499430">
+      <ele>-6.76</ele>
+      <time>2013-02-05T16:51:56Z</time>
+      <name>GLT0000211</name>
+    </trkpt>
+    <trkpt lat="52.12864520" lon="4.43660606">
+      <ele>-6.19</ele>
+      <time>2013-02-05T16:52:01Z</time>
+      <name>GLT0000212</name>
+    </trkpt>
+    <trkpt lat="52.12988191" lon="4.43785379">
+      <ele>-6.34</ele>
+      <time>2013-02-05T16:52:06Z</time>
+      <name>GLT0000213</name>
+    </trkpt>
+    <trkpt lat="52.13089277" lon="4.43892265">
+      <ele>-6.52</ele>
+      <time>2013-02-05T16:52:11Z</time>
+      <name>GLT0000214</name>
+    </trkpt>
+    <trkpt lat="52.13215336" lon="4.44029619">
+      <ele>-6.63</ele>
+      <time>2013-02-05T16:52:16Z</time>
+      <name>GLT0000215</name>
+    </trkpt>
+    <trkpt lat="52.13275346" lon="4.44090706">
+      <ele>-6.39</ele>
+      <time>2013-02-05T16:52:21Z</time>
+      <name>GLT0000216</name>
+    </trkpt>
+    <trkpt lat="52.13348877" lon="4.44158876">
+      <ele>-6.32</ele>
+      <time>2013-02-05T16:52:26Z</time>
+      <name>GLT0000217</name>
+    </trkpt>
+    <trkpt lat="52.13499420" lon="4.44306063">
+      <ele>-6.44</ele>
+      <time>2013-02-05T16:52:31Z</time>
+      <name>GLT0000218</name>
+    </trkpt>
+    <trkpt lat="52.13612077" lon="4.44428363">
+      <ele>-5.53</ele>
+      <time>2013-02-05T16:52:36Z</time>
+      <name>GLT0000219</name>
+    </trkpt>
+    <trkpt lat="52.13763680" lon="4.44583034">
+      <ele>-3.81</ele>
+      <time>2013-02-05T16:52:41Z</time>
+      <name>GLT0000220</name>
+    </trkpt>
+    <trkpt lat="52.13913389" lon="4.44755743">
+      <ele>-6.39</ele>
+      <time>2013-02-05T16:52:46Z</time>
+      <name>GLT0000221</name>
+    </trkpt>
+    <trkpt lat="52.14059033" lon="4.44917992">
+      <ele>-7.43</ele>
+      <time>2013-02-05T16:52:51Z</time>
+      <name>GLT0000222</name>
+    </trkpt>
+    <trkpt lat="52.14191715" lon="4.45058531">
+      <ele>-6.56</ele>
+      <time>2013-02-05T16:52:56Z</time>
+      <name>GLT0000223</name>
+    </trkpt>
+    <trkpt lat="52.14191715" lon="4.45058531">
+      <ele>-6.56</ele>
+      <time>2013-02-05T16:53:01Z</time>
+      <name>GLT0000224</name>
+    </trkpt>
+    <trkpt lat="52.14395160" lon="4.45280300">
+      <ele>-9.87</ele>
+      <time>2013-02-05T16:53:06Z</time>
+      <name>GLT0000225</name>
+    </trkpt>
+    <trkpt lat="52.14561034" lon="4.45456462">
+      <ele>-9.70</ele>
+      <time>2013-02-05T16:53:11Z</time>
+      <name>GLT0000226</name>
+    </trkpt>
+    <trkpt lat="52.14657946" lon="4.45541069">
+      <ele>-8.38</ele>
+      <time>2013-02-05T16:53:16Z</time>
+      <name>GLT0000227</name>
+    </trkpt>
+    <trkpt lat="52.14828693" lon="4.45721565">
+      <ele>-9.30</ele>
+      <time>2013-02-05T16:53:21Z</time>
+      <name>GLT0000228</name>
+    </trkpt>
+    <trkpt lat="52.14919272" lon="4.45845600">
+      <ele>-7.95</ele>
+      <time>2013-02-05T16:53:26Z</time>
+      <name>GLT0000229</name>
+    </trkpt>
+    <trkpt lat="52.15017269" lon="4.45984111">
+      <ele>-8.82</ele>
+      <time>2013-02-05T16:53:31Z</time>
+      <name>GLT0000230</name>
+    </trkpt>
+    <trkpt lat="52.15104533" lon="4.46111181">
+      <ele>-8.82</ele>
+      <time>2013-02-05T16:53:36Z</time>
+      <name>GLT0000231</name>
+    </trkpt>
+    <trkpt lat="52.15201147" lon="4.46246641">
+      <ele>-9.75</ele>
+      <time>2013-02-05T16:53:41Z</time>
+      <name>GLT0000232</name>
+    </trkpt>
+    <trkpt lat="52.15313226" lon="4.46352324">
+      <ele>-8.71</ele>
+      <time>2013-02-05T16:53:46Z</time>
+      <name>GLT0000233</name>
+    </trkpt>
+    <trkpt lat="52.15407715" lon="4.46460927">
+      <ele>-8.46</ele>
+      <time>2013-02-05T16:53:51Z</time>
+      <name>GLT0000234</name>
+    </trkpt>
+    <trkpt lat="52.15474305" lon="4.46620557">
+      <ele>-9.04</ele>
+      <time>2013-02-05T16:53:56Z</time>
+      <name>GLT0000235</name>
+    </trkpt>
+    <trkpt lat="52.15553787" lon="4.46732104">
+      <ele>-9.70</ele>
+      <time>2013-02-05T16:54:01Z</time>
+      <name>GLT0000236</name>
+    </trkpt>
+    <trkpt lat="52.15636143" lon="4.46837548">
+      <ele>-11.35</ele>
+      <time>2013-02-05T16:54:06Z</time>
+      <name>GLT0000237</name>
+    </trkpt>
+    <trkpt lat="52.15718747" lon="4.46944686">
+      <ele>-10.15</ele>
+      <time>2013-02-05T16:54:11Z</time>
+      <name>GLT0000238</name>
+    </trkpt>
+    <trkpt lat="52.15799096" lon="4.47053248">
+      <ele>-8.90</ele>
+      <time>2013-02-05T16:54:16Z</time>
+      <name>GLT0000239</name>
+    </trkpt>
+    <trkpt lat="52.15876854" lon="4.47156932">
+      <ele>-9.60</ele>
+      <time>2013-02-05T16:54:21Z</time>
+      <name>GLT0000240</name>
+    </trkpt>
+    <trkpt lat="52.15956633" lon="4.47261974">
+      <ele>-6.99</ele>
+      <time>2013-02-05T16:54:26Z</time>
+      <name>GLT0000241</name>
+    </trkpt>
+    <trkpt lat="52.16036366" lon="4.47367603">
+      <ele>-7.47</ele>
+      <time>2013-02-05T16:54:31Z</time>
+      <name>GLT0000242</name>
+    </trkpt>
+    <trkpt lat="52.16093602" lon="4.47446737">
+      <ele>-7.12</ele>
+      <time>2013-02-05T16:54:36Z</time>
+      <name>GLT0000243</name>
+    </trkpt>
+    <trkpt lat="52.16150804" lon="4.47531017">
+      <ele>-7.31</ele>
+      <time>2013-02-05T16:54:41Z</time>
+      <name>GLT0000244</name>
+    </trkpt>
+    <trkpt lat="52.16196448" lon="4.47596923">
+      <ele>-4.22</ele>
+      <time>2013-02-05T16:54:46Z</time>
+      <name>GLT0000245</name>
+    </trkpt>
+    <trkpt lat="52.16244170" lon="4.47664180">
+      <ele>-2.29</ele>
+      <time>2013-02-05T16:54:51Z</time>
+      <name>GLT0000246</name>
+    </trkpt>
+    <trkpt lat="52.16289923" lon="4.47728368">
+      <ele>-3.05</ele>
+      <time>2013-02-05T16:54:56Z</time>
+      <name>GLT0000247</name>
+    </trkpt>
+    <trkpt lat="52.16333593" lon="4.47792473">
+      <ele>-3.05</ele>
+      <time>2013-02-05T16:55:01Z</time>
+      <name>GLT0000248</name>
+    </trkpt>
+    <trkpt lat="52.16370088" lon="4.47844156">
+      <ele>-2.33</ele>
+      <time>2013-02-05T16:55:06Z</time>
+      <name>GLT0000249</name>
+    </trkpt>
+    <trkpt lat="52.16404168" lon="4.47892847">
+      <ele>-6.35</ele>
+      <time>2013-02-05T16:55:11Z</time>
+      <name>GLT0000250</name>
+    </trkpt>
+    <trkpt lat="52.16442679" lon="4.47946910">
+      <ele>-4.89</ele>
+      <time>2013-02-05T16:55:16Z</time>
+      <name>GLT0000251</name>
+    </trkpt>
+    <trkpt lat="52.16469250" lon="4.47986766">
+      <ele>-5.20</ele>
+      <time>2013-02-05T16:55:21Z</time>
+      <name>GLT0000252</name>
+    </trkpt>
+    <trkpt lat="52.16496168" lon="4.48025457">
+      <ele>-5.49</ele>
+      <time>2013-02-05T16:55:26Z</time>
+      <name>GLT0000253</name>
+    </trkpt>
+    <trkpt lat="52.16517563" lon="4.48057526">
+      <ele>-2.85</ele>
+      <time>2013-02-05T16:55:31Z</time>
+      <name>GLT0000254</name>
+    </trkpt>
+    <trkpt lat="52.16520551" lon="4.48075823">
+      <ele>-1.48</ele>
+      <time>2013-02-05T16:55:36Z</time>
+      <name>GLT0000255</name>
+    </trkpt>
+    <trkpt lat="52.16526678" lon="4.48089964">
+      <ele>2.97</ele>
+      <time>2013-02-05T16:55:41Z</time>
+      <name>GLT0000256</name>
+    </trkpt>
+    <trkpt lat="52.16534251" lon="4.48101313">
+      <ele>6.00</ele>
+      <time>2013-02-05T16:55:47Z</time>
+      <name>GLT0000257</name>
+    </trkpt>
+    <trkpt lat="52.16543350" lon="4.48105487">
+      <ele>9.59</ele>
+      <time>2013-02-05T16:55:51Z</time>
+      <name>GLT0000258</name>
+    </trkpt>
+    <trkpt lat="52.16546678" lon="4.48104037">
+      <ele>10.72</ele>
+      <time>2013-02-05T16:55:53Z</time>
+      <name>GLT0000259</name>
+    </trkpt>
+    <trkpt lat="52.16555835" lon="4.48104372">
+      <ele>10.12</ele>
+      <time>2013-02-05T16:56:15Z</time>
+      <name>GLT0000260</name>
+    </trkpt>
+    <trkpt lat="52.16562360" lon="4.48115462">
+      <ele>-0.45</ele>
+      <time>2013-02-05T16:56:20Z</time>
+      <name>GLT0000261</name>
+    </trkpt>
+    <trkpt lat="52.16570210" lon="4.48123885">
+      <ele>-2.86</ele>
+      <time>2013-02-05T16:56:25Z</time>
+      <name>GLT0000262</name>
+    </trkpt>
+    <trkpt lat="52.16577657" lon="4.48132326">
+      <ele>0.13</ele>
+      <time>2013-02-05T16:56:32Z</time>
+      <name>GLT0000263</name>
+    </trkpt>
+    <trkpt lat="52.16584987" lon="4.48141772">
+      <ele>3.84</ele>
+      <time>2013-02-05T16:56:45Z</time>
+      <name>GLT0000264</name>
+    </trkpt>
+    <trkpt lat="52.16591948" lon="4.48153121">
+      <ele>9.76</ele>
+      <time>2013-02-05T16:56:55Z</time>
+      <name>GLT0000265</name>
+    </trkpt>
+    <trkpt lat="52.16599165" lon="4.48163892">
+      <ele>5.02</ele>
+      <time>2013-02-05T16:57:02Z</time>
+      <name>GLT0000266</name>
+    </trkpt>
+    <trkpt lat="52.16604425" lon="4.48176247">
+      <ele>7.71</ele>
+      <time>2013-02-05T16:57:10Z</time>
+      <name>GLT0000267</name>
+    </trkpt>
+    <trkpt lat="52.16609739" lon="4.48191158">
+      <ele>9.67</ele>
+      <time>2013-02-05T16:57:26Z</time>
+      <name>GLT0000268</name>
+    </trkpt>
+    <trkpt lat="52.16614395" lon="4.48204620">
+      <ele>11.73</ele>
+      <time>2013-02-05T16:57:36Z</time>
+      <name>GLT0000269</name>
+    </trkpt>
+    <trkpt lat="52.16613875" lon="4.48221224">
+      <ele>8.68</ele>
+      <time>2013-02-05T16:58:07Z</time>
+      <name>GLT0000270</name>
+    </trkpt>
+    <trkpt lat="52.16608980" lon="4.48238382">
+      <ele>12.31</ele>
+      <time>2013-02-05T16:58:17Z</time>
+      <name>GLT0000271</name>
+    </trkpt>
+    <trkpt lat="52.16603046" lon="4.48253252">
+      <ele>11.13</ele>
+      <time>2013-02-05T16:58:24Z</time>
+      <name>GLT0000272</name>
+    </trkpt>
+    <trkpt lat="52.16610020" lon="4.48264483">
+      <ele>-5.37</ele>
+      <time>2013-02-05T16:58:33Z</time>
+      <name>GLT0000273</name>
+    </trkpt>
+    <trkpt lat="52.16619818" lon="4.48265104">
+      <ele>-16.61</ele>
+      <time>2013-02-05T16:58:39Z</time>
+      <name>GLT0000274</name>
+    </trkpt>
+    <trkpt lat="52.16629587" lon="4.48266713">
+      <ele>-22.09</ele>
+      <time>2013-02-05T16:58:47Z</time>
+      <name>GLT0000275</name>
+    </trkpt>
+    <trkpt lat="52.16630652" lon="4.48281306">
+      <ele>-6.31</ele>
+      <time>2013-02-05T16:58:57Z</time>
+      <name>GLT0000276</name>
+    </trkpt>
+    <trkpt lat="52.16635978" lon="4.48293191">
+      <ele>-4.67</ele>
+      <time>2013-02-05T16:59:43Z</time>
+      <name>GLT0000277</name>
+    </trkpt>
+    <trkpt lat="52.16644356" lon="4.48303183">
+      <ele>-1.54</ele>
+      <time>2013-02-05T16:59:59Z</time>
+      <name>GLT0000278</name>
+    </trkpt>
+    <trkpt lat="52.16650295" lon="4.48314247">
+      <ele>-1.72</ele>
+      <time>2013-02-05T17:00:40Z</time>
+      <name>GLT0000279</name>
+    </trkpt>
+    <trkpt lat="52.16651879" lon="4.48329686">
+      <ele>-4.57</ele>
+      <time>2013-02-05T17:00:57Z</time>
+      <name>GLT0000280</name>
+    </trkpt>
+    <trkpt lat="52.16646242" lon="4.48315999">
+      <ele>-7.61</ele>
+      <time>2013-02-05T17:01:29Z</time>
+      <name>GLT0000281</name>
+    </trkpt>
+    <trkpt lat="52.16638719" lon="4.48329695">
+      <ele>0.78</ele>
+      <time>2013-02-05T17:02:04Z</time>
+      <name>GLT0000282</name>
+    </trkpt>
+    <trkpt lat="52.16631331" lon="4.48343307">
+      <ele>5.02</ele>
+      <time>2013-02-05T17:02:08Z</time>
+      <name>GLT0000283</name>
+    </trkpt>
+    <trkpt lat="52.16622161" lon="4.48338303">
+      <ele>29.89</ele>
+      <time>2013-02-05T17:02:12Z</time>
+      <name>GLT0000284</name>
+    </trkpt>
+    <trkpt lat="52.16615212" lon="4.48319393">
+      <ele>32.10</ele>
+      <time>2013-02-05T17:02:18Z</time>
+      <name>GLT0000285</name>
+    </trkpt>
+    <trkpt lat="52.16619349" lon="4.48334288">
+      <ele>24.93</ele>
+      <time>2013-02-05T17:02:32Z</time>
+      <name>GLT0000286</name>
+    </trkpt>
+    <trkpt lat="52.16629860" lon="4.48338445">
+      <ele>23.57</ele>
+      <time>2013-02-05T17:02:36Z</time>
+      <name>GLT0000287</name>
+    </trkpt>
+    <trkpt lat="52.16656698" lon="4.48356567">
+      <ele>12.43</ele>
+      <time>2013-02-05T17:02:41Z</time>
+      <name>GLT0000288</name>
+    </trkpt>
+    <trkpt lat="52.16664540" lon="4.48365234">
+      <ele>5.36</ele>
+      <time>2013-02-05T17:02:46Z</time>
+      <name>GLT0000289</name>
+    </trkpt>
+    <trkpt lat="52.16661531" lon="4.48381755">
+      <ele>8.90</ele>
+      <time>2013-02-05T17:02:50Z</time>
+      <name>GLT0000290</name>
+    </trkpt>
+    <trkpt lat="52.16660064" lon="4.48399466">
+      <ele>4.67</ele>
+      <time>2013-02-05T17:02:53Z</time>
+      <name>GLT0000291</name>
+    </trkpt>
+    <trkpt lat="52.16656728" lon="4.48414821">
+      <ele>4.87</ele>
+      <time>2013-02-05T17:02:55Z</time>
+      <name>GLT0000292</name>
+    </trkpt>
+    <trkpt lat="52.16653346" lon="4.48429473">
+      <ele>2.33</ele>
+      <time>2013-02-05T17:02:57Z</time>
+      <name>GLT0000293</name>
+    </trkpt>
+    <trkpt lat="52.16647126" lon="4.48443797">
+      <ele>1.40</ele>
+      <time>2013-02-05T17:02:59Z</time>
+      <name>GLT0000294</name>
+    </trkpt>
+    <trkpt lat="52.16640220" lon="4.48459245">
+      <ele>-0.20</ele>
+      <time>2013-02-05T17:03:01Z</time>
+      <name>GLT0000295</name>
+    </trkpt>
+    <trkpt lat="52.16633900" lon="4.48473905">
+      <ele>0.38</ele>
+      <time>2013-02-05T17:03:03Z</time>
+      <name>GLT0000296</name>
+    </trkpt>
+    <trkpt lat="52.16628074" lon="4.48488431">
+      <ele>1.40</ele>
+      <time>2013-02-05T17:03:05Z</time>
+      <name>GLT0000297</name>
+    </trkpt>
+    <trkpt lat="52.16622538" lon="4.48503166">
+      <ele>2.17</ele>
+      <time>2013-02-05T17:03:07Z</time>
+      <name>GLT0000298</name>
+    </trkpt>
+    <trkpt lat="52.16617697" lon="4.48519553">
+      <ele>2.81</ele>
+      <time>2013-02-05T17:03:09Z</time>
+      <name>GLT0000299</name>
+    </trkpt>
+    <trkpt lat="52.16611801" lon="4.48538622">
+      <ele>1.72</ele>
+      <time>2013-02-05T17:03:11Z</time>
+      <name>GLT0000300</name>
+    </trkpt>
+    <trkpt lat="52.16606093" lon="4.48556065">
+      <ele>1.74</ele>
+      <time>2013-02-05T17:03:13Z</time>
+      <name>GLT0000301</name>
+    </trkpt>
+    <trkpt lat="52.16600452" lon="4.48571932">
+      <ele>1.51</ele>
+      <time>2013-02-05T17:03:15Z</time>
+      <name>GLT0000302</name>
+    </trkpt>
+    <trkpt lat="52.16593926" lon="4.48585544">
+      <ele>0.96</ele>
+      <time>2013-02-05T17:03:17Z</time>
+      <name>GLT0000303</name>
+    </trkpt>
+    <trkpt lat="52.16585968" lon="4.48596876">
+      <ele>0.32</ele>
+      <time>2013-02-05T17:03:19Z</time>
+      <name>GLT0000304</name>
+    </trkpt>
+    <trkpt lat="52.16577531" lon="4.48605032">
+      <ele>-0.75</ele>
+      <time>2013-02-05T17:03:21Z</time>
+      <name>GLT0000305</name>
+    </trkpt>
+    <trkpt lat="52.16567968" lon="4.48608225">
+      <ele>-1.65</ele>
+      <time>2013-02-05T17:03:24Z</time>
+      <name>GLT0000306</name>
+    </trkpt>
+    <trkpt lat="52.16558856" lon="4.48610463">
+      <ele>-1.89</ele>
+      <time>2013-02-05T17:03:28Z</time>
+      <name>GLT0000307</name>
+    </trkpt>
+    <trkpt lat="52.16546275" lon="4.48613112">
+      <ele>-1.88</ele>
+      <time>2013-02-05T17:03:40Z</time>
+      <name>GLT0000308</name>
+    </trkpt>
+    <trkpt lat="52.16534017" lon="4.48615098">
+      <ele>-1.14</ele>
+      <time>2013-02-05T17:03:43Z</time>
+      <name>GLT0000309</name>
+    </trkpt>
+    <trkpt lat="52.16520937" lon="4.48618535">
+      <ele>-0.20</ele>
+      <time>2013-02-05T17:03:46Z</time>
+      <name>GLT0000310</name>
+    </trkpt>
+    <trkpt lat="52.16508414" lon="4.48620706">
+      <ele>-1.68</ele>
+      <time>2013-02-05T17:03:49Z</time>
+      <name>GLT0000311</name>
+    </trkpt>
+    <trkpt lat="52.16495560" lon="4.48623170">
+      <ele>-1.47</ele>
+      <time>2013-02-05T17:03:51Z</time>
+      <name>GLT0000312</name>
+    </trkpt>
+    <trkpt lat="52.16485188" lon="4.48634955">
+      <ele>0.12</ele>
+      <time>2013-02-05T17:03:54Z</time>
+      <name>GLT0000313</name>
+    </trkpt>
+    <trkpt lat="52.16480230" lon="4.48649934">
+      <ele>2.03</ele>
+      <time>2013-02-05T17:03:57Z</time>
+      <name>GLT0000314</name>
+    </trkpt>
+    <trkpt lat="52.16476182" lon="4.48668181">
+      <ele>0.38</ele>
+      <time>2013-02-05T17:03:59Z</time>
+      <name>GLT0000315</name>
+    </trkpt>
+    <trkpt lat="52.16470276" lon="4.48683629">
+      <ele>-0.86</ele>
+      <time>2013-02-05T17:04:01Z</time>
+      <name>GLT0000316</name>
+    </trkpt>
+    <trkpt lat="52.16463885" lon="4.48700426">
+      <ele>-1.46</ele>
+      <time>2013-02-05T17:04:03Z</time>
+      <name>GLT0000317</name>
+    </trkpt>
+    <trkpt lat="52.16463885" lon="4.48700426">
+      <ele>-1.46</ele>
+      <time>2013-02-05T17:04:03Z</time>
+      <name>GLT0000318</name>
+    </trkpt>
+    <trkpt lat="52.16446111" lon="4.48744119">
+      <ele>-0.89</ele>
+      <time>2013-02-05T17:04:08Z</time>
+      <name>GLT0000319</name>
+    </trkpt>
+    <trkpt lat="52.16416517" lon="4.48758477">
+      <ele>-1.54</ele>
+      <time>2013-02-05T17:04:13Z</time>
+      <name>GLT0000320</name>
+    </trkpt>
+    <trkpt lat="52.16390114" lon="4.48769976">
+      <ele>-2.00</ele>
+      <time>2013-02-05T17:04:18Z</time>
+      <name>GLT0000321</name>
+    </trkpt>
+    <trkpt lat="52.16367456" lon="4.48784653">
+      <ele>-3.74</ele>
+      <time>2013-02-05T17:04:23Z</time>
+      <name>GLT0000322</name>
+    </trkpt>
+    <trkpt lat="52.16358529" lon="4.48827289">
+      <ele>-2.62</ele>
+      <time>2013-02-05T17:04:28Z</time>
+      <name>GLT0000323</name>
+    </trkpt>
+    <trkpt lat="52.16358560" lon="4.48887269">
+      <ele>-3.19</ele>
+      <time>2013-02-05T17:04:33Z</time>
+      <name>GLT0000324</name>
+    </trkpt>
+    <trkpt lat="52.16357460" lon="4.48945293">
+      <ele>-4.14</ele>
+      <time>2013-02-05T17:04:38Z</time>
+      <name>GLT0000325</name>
+    </trkpt>
+    <trkpt lat="52.16357599" lon="4.48984229">
+      <ele>-3.18</ele>
+      <time>2013-02-05T17:04:43Z</time>
+      <name>GLT0000326</name>
+    </trkpt>
+    <trkpt lat="52.16353206" lon="4.49028477">
+      <ele>-3.06</ele>
+      <time>2013-02-05T17:04:48Z</time>
+      <name>GLT0000327</name>
+    </trkpt>
+    <trkpt lat="52.16349257" lon="4.49072859">
+      <ele>-3.38</ele>
+      <time>2013-02-05T17:04:53Z</time>
+      <name>GLT0000328</name>
+    </trkpt>
+    <trkpt lat="52.16348183" lon="4.49114538">
+      <ele>-3.93</ele>
+      <time>2013-02-05T17:04:58Z</time>
+      <name>GLT0000329</name>
+    </trkpt>
+    <trkpt lat="52.16342399" lon="4.49165550">
+      <ele>-4.03</ele>
+      <time>2013-02-05T17:05:03Z</time>
+      <name>GLT0000330</name>
+    </trkpt>
+    <trkpt lat="52.16343464" lon="4.49206764">
+      <ele>-3.85</ele>
+      <time>2013-02-05T17:05:08Z</time>
+      <name>GLT0000331</name>
+    </trkpt>
+    <trkpt lat="52.16343358" lon="4.49258259">
+      <ele>0.89</ele>
+      <time>2013-02-05T17:05:13Z</time>
+      <name>GLT0000332</name>
+    </trkpt>
+    <trkpt lat="52.16339649" lon="4.49308231">
+      <ele>1.47</ele>
+      <time>2013-02-05T17:05:18Z</time>
+      <name>GLT0000333</name>
+    </trkpt>
+    <trkpt lat="52.16334079" lon="4.49361591">
+      <ele>2.87</ele>
+      <time>2013-02-05T17:05:23Z</time>
+      <name>GLT0000334</name>
+    </trkpt>
+    <trkpt lat="52.16328052" lon="4.49408043">
+      <ele>1.20</ele>
+      <time>2013-02-05T17:05:28Z</time>
+      <name>GLT0000335</name>
+    </trkpt>
+    <trkpt lat="52.16319717" lon="4.49461151">
+      <ele>3.67</ele>
+      <time>2013-02-05T17:05:33Z</time>
+      <name>GLT0000336</name>
+    </trkpt>
+    <trkpt lat="52.16317600" lon="4.49515801">
+      <ele>2.34</ele>
+      <time>2013-02-05T17:05:38Z</time>
+      <name>GLT0000337</name>
+    </trkpt>
+    <trkpt lat="52.16313598" lon="4.49565087">
+      <ele>4.00</ele>
+      <time>2013-02-05T17:05:43Z</time>
+      <name>GLT0000338</name>
+    </trkpt>
+    <trkpt lat="52.16307219" lon="4.49608622">
+      <ele>3.91</ele>
+      <time>2013-02-05T17:05:48Z</time>
+      <name>GLT0000339</name>
+    </trkpt>
+    <trkpt lat="52.16305182" lon="4.49640851">
+      <ele>2.16</ele>
+      <time>2013-02-05T17:05:53Z</time>
+      <name>GLT0000340</name>
+    </trkpt>
+    <trkpt lat="52.16296679" lon="4.49676080">
+      <ele>-1.74</ele>
+      <time>2013-02-05T17:05:58Z</time>
+      <name>GLT0000341</name>
+    </trkpt>
+    <trkpt lat="52.16287664" lon="4.49725952">
+      <ele>-3.07</ele>
+      <time>2013-02-05T17:06:05Z</time>
+      <name>GLT0000342</name>
+    </trkpt>
+    <trkpt lat="52.16285041" lon="4.49744023">
+      <ele>-5.41</ele>
+      <time>2013-02-05T17:06:08Z</time>
+      <name>GLT0000343</name>
+    </trkpt>
+    <trkpt lat="52.16274421" lon="4.49757066">
+      <ele>-2.89</ele>
+      <time>2013-02-05T17:06:11Z</time>
+      <name>GLT0000344</name>
+    </trkpt>
+    <trkpt lat="52.16263562" lon="4.49759270">
+      <ele>-2.74</ele>
+      <time>2013-02-05T17:06:13Z</time>
+      <name>GLT0000345</name>
+    </trkpt>
+    <trkpt lat="52.16252879" lon="4.49759253">
+      <ele>-2.21</ele>
+      <time>2013-02-05T17:06:15Z</time>
+      <name>GLT0000346</name>
+    </trkpt>
+    <trkpt lat="52.16242033" lon="4.49758457">
+      <ele>-3.10</ele>
+      <time>2013-02-05T17:06:17Z</time>
+      <name>GLT0000347</name>
+    </trkpt>
+    <trkpt lat="52.16231166" lon="4.49757610">
+      <ele>-3.51</ele>
+      <time>2013-02-05T17:06:19Z</time>
+      <name>GLT0000348</name>
+    </trkpt>
+    <trkpt lat="52.16219762" lon="4.49757636">
+      <ele>-1.62</ele>
+      <time>2013-02-05T17:06:21Z</time>
+      <name>GLT0000349</name>
+    </trkpt>
+    <trkpt lat="52.16209054" lon="4.49756596">
+      <ele>-1.67</ele>
+      <time>2013-02-05T17:06:23Z</time>
+      <name>GLT0000350</name>
+    </trkpt>
+    <trkpt lat="52.16198506" lon="4.49753989">
+      <ele>0.44</ele>
+      <time>2013-02-05T17:06:25Z</time>
+      <name>GLT0000351</name>
+    </trkpt>
+    <trkpt lat="52.16187689" lon="4.49751919">
+      <ele>4.05</ele>
+      <time>2013-02-05T17:06:27Z</time>
+      <name>GLT0000352</name>
+    </trkpt>
+    <trkpt lat="52.16177618" lon="4.49750083">
+      <ele>4.51</ele>
+      <time>2013-02-05T17:06:29Z</time>
+      <name>GLT0000353</name>
+    </trkpt>
+    <trkpt lat="52.16177618" lon="4.49750083">
+      <ele>4.51</ele>
+      <time>2013-02-05T17:06:29Z</time>
+      <name>GLT0000354</name>
+    </trkpt>
+    <trkpt lat="52.16159849" lon="4.49746773">
+      <ele>4.78</ele>
+      <time>2013-02-05T17:06:34Z</time>
+      <name>GLT0000355</name>
+    </trkpt>
+    <trkpt lat="52.16137448" lon="4.49729917">
+      <ele>4.80</ele>
+      <time>2013-02-05T17:06:39Z</time>
+      <name>GLT0000356</name>
+    </trkpt>
+    <trkpt lat="52.16108916" lon="4.49710948">
+      <ele>6.35</ele>
+      <time>2013-02-05T17:06:44Z</time>
+      <name>GLT0000357</name>
+    </trkpt>
+    <trkpt lat="52.16100127" lon="4.49704897">
+      <ele>6.02</ele>
+      <time>2013-02-05T17:06:46Z</time>
+      <name>GLT0000358</name>
+    </trkpt>
+    <trkpt lat="52.16091720" lon="4.49699717">
+      <ele>3.70</ele>
+      <time>2013-02-05T17:06:48Z</time>
+      <name>GLT0000359</name>
+    </trkpt>
+    <trkpt lat="52.16079240" lon="4.49697621">
+      <ele>3.36</ele>
+      <time>2013-02-05T17:06:51Z</time>
+      <name>GLT0000360</name>
+    </trkpt>
+    <trkpt lat="52.16069944" lon="4.49698627">
+      <ele>3.74</ele>
+      <time>2013-02-05T17:06:53Z</time>
+      <name>GLT0000361</name>
+    </trkpt>
+    <trkpt lat="52.16060896" lon="4.49699566">
+      <ele>2.96</ele>
+      <time>2013-02-05T17:06:55Z</time>
+      <name>GLT0000362</name>
+    </trkpt>
+    <trkpt lat="52.16051089" lon="4.49700605">
+      <ele>3.82</ele>
+      <time>2013-02-05T17:06:57Z</time>
+      <name>GLT0000363</name>
+    </trkpt>
+    <trkpt lat="52.16040830" lon="4.49701871">
+      <ele>4.86</ele>
+      <time>2013-02-05T17:06:59Z</time>
+      <name>GLT0000364</name>
+    </trkpt>
+    <trkpt lat="52.16030746" lon="4.49702667">
+      <ele>5.40</ele>
+      <time>2013-02-05T17:07:01Z</time>
+      <name>GLT0000365</name>
+    </trkpt>
+    <trkpt lat="52.16017536" lon="4.49703245">
+      <ele>5.11</ele>
+      <time>2013-02-05T17:07:04Z</time>
+      <name>GLT0000366</name>
+    </trkpt>
+    <trkpt lat="52.16004502" lon="4.49699767">
+      <ele>4.46</ele>
+      <time>2013-02-05T17:07:07Z</time>
+      <name>GLT0000367</name>
+    </trkpt>
+    <trkpt lat="52.15991599" lon="4.49694344">
+      <ele>4.60</ele>
+      <time>2013-02-05T17:07:10Z</time>
+      <name>GLT0000368</name>
+    </trkpt>
+    <trkpt lat="52.15982408" lon="4.49686825">
+      <ele>5.56</ele>
+      <time>2013-02-05T17:07:12Z</time>
+      <name>GLT0000369</name>
+    </trkpt>
+    <trkpt lat="52.15972073" lon="4.49679466">
+      <ele>6.30</ele>
+      <time>2013-02-05T17:07:14Z</time>
+      <name>GLT0000370</name>
+    </trkpt>
+    <trkpt lat="52.15962233" lon="4.49673532">
+      <ele>6.55</ele>
+      <time>2013-02-05T17:07:16Z</time>
+      <name>GLT0000371</name>
+    </trkpt>
+    <trkpt lat="52.15962233" lon="4.49673532">
+      <ele>6.55</ele>
+      <time>2013-02-05T17:07:16Z</time>
+      <name>GLT0000372</name>
+    </trkpt>
+    <trkpt lat="52.15943495" lon="4.49661545">
+      <ele>7.58</ele>
+      <time>2013-02-05T17:07:21Z</time>
+      <name>GLT0000373</name>
+    </trkpt>
+    <trkpt lat="52.15923512" lon="4.49645871">
+      <ele>7.64</ele>
+      <time>2013-02-05T17:07:26Z</time>
+      <name>GLT0000374</name>
+    </trkpt>
+    <trkpt lat="52.15907457" lon="4.49635880">
+      <ele>7.00</ele>
+      <time>2013-02-05T17:07:31Z</time>
+      <name>GLT0000375</name>
+    </trkpt>
+    <trkpt lat="52.15894783" lon="4.49626409">
+      <ele>2.36</ele>
+      <time>2013-02-05T17:07:36Z</time>
+      <name>GLT0000376</name>
+    </trkpt>
+    <trkpt lat="52.15877173" lon="4.49613375">
+      <ele>0.64</ele>
+      <time>2013-02-05T17:07:42Z</time>
+      <name>GLT0000377</name>
+    </trkpt>
+    <trkpt lat="52.15868234" lon="4.49606921">
+      <ele>1.32</ele>
+      <time>2013-02-05T17:07:44Z</time>
+      <name>GLT0000378</name>
+    </trkpt>
+    <trkpt lat="52.15857287" lon="4.49599167">
+      <ele>2.25</ele>
+      <time>2013-02-05T17:07:46Z</time>
+      <name>GLT0000379</name>
+    </trkpt>
+    <trkpt lat="52.15847468" lon="4.49592252">
+      <ele>1.51</ele>
+      <time>2013-02-05T17:07:48Z</time>
+      <name>GLT0000380</name>
+    </trkpt>
+    <trkpt lat="52.15838394" lon="4.49585228">
+      <ele>2.17</ele>
+      <time>2013-02-05T17:07:50Z</time>
+      <name>GLT0000381</name>
+    </trkpt>
+    <trkpt lat="52.15828474" lon="4.49579461">
+      <ele>2.46</ele>
+      <time>2013-02-05T17:07:52Z</time>
+      <name>GLT0000382</name>
+    </trkpt>
+    <trkpt lat="52.15818600" lon="4.49572387">
+      <ele>2.25</ele>
+      <time>2013-02-05T17:07:54Z</time>
+      <name>GLT0000383</name>
+    </trkpt>
+    <trkpt lat="52.15818600" lon="4.49572387">
+      <ele>2.25</ele>
+      <time>2013-02-05T17:07:54Z</time>
+      <name>GLT0000384</name>
+    </trkpt>
+    <trkpt lat="52.15796334" lon="4.49560896">
+      <ele>3.05</ele>
+      <time>2013-02-05T17:07:59Z</time>
+      <name>GLT0000385</name>
+    </trkpt>
+    <trkpt lat="52.15767538" lon="4.49543470">
+      <ele>6.71</ele>
+      <time>2013-02-05T17:08:04Z</time>
+      <name>GLT0000386</name>
+    </trkpt>
+    <trkpt lat="52.15744177" lon="4.49536152">
+      <ele>4.96</ele>
+      <time>2013-02-05T17:08:09Z</time>
+      <name>GLT0000387</name>
+    </trkpt>
+    <trkpt lat="52.15720704" lon="4.49527997">
+      <ele>8.63</ele>
+      <time>2013-02-05T17:08:14Z</time>
+      <name>GLT0000388</name>
+    </trkpt>
+    <trkpt lat="52.15690852" lon="4.49515809">
+      <ele>6.95</ele>
+      <time>2013-02-05T17:08:19Z</time>
+      <name>GLT0000389</name>
+    </trkpt>
+    <trkpt lat="52.15670882" lon="4.49505307">
+      <ele>3.58</ele>
+      <time>2013-02-05T17:08:24Z</time>
+      <name>GLT0000390</name>
+    </trkpt>
+    <trkpt lat="52.15663535" lon="4.49500470">
+      <ele>0.84</ele>
+      <time>2013-02-05T17:08:29Z</time>
+      <name>GLT0000391</name>
+    </trkpt>
+    <trkpt lat="52.15662492" lon="4.49502004">
+      <ele>-0.08</ele>
+      <time>2013-02-05T17:08:34Z</time>
+      <name>GLT0000392</name>
+    </trkpt>
+    <trkpt lat="52.15651423" lon="4.49496070">
+      <ele>0.47</ele>
+      <time>2013-02-05T17:08:40Z</time>
+      <name>GLT0000393</name>
+    </trkpt>
+    <trkpt lat="52.15642191" lon="4.49492491">
+      <ele>0.56</ele>
+      <time>2013-02-05T17:08:43Z</time>
+      <name>GLT0000394</name>
+    </trkpt>
+    <trkpt lat="52.15633008" lon="4.49488836">
+      <ele>0.18</ele>
+      <time>2013-02-05T17:08:46Z</time>
+      <name>GLT0000395</name>
+    </trkpt>
+    <trkpt lat="52.15622233" lon="4.49482223">
+      <ele>0.09</ele>
+      <time>2013-02-05T17:08:49Z</time>
+      <name>GLT0000396</name>
+    </trkpt>
+    <trkpt lat="52.15613659" lon="4.49476498">
+      <ele>-2.59</ele>
+      <time>2013-02-05T17:08:52Z</time>
+      <name>GLT0000397</name>
+    </trkpt>
+    <trkpt lat="52.15603684" lon="4.49488258">
+      <ele>0.12</ele>
+      <time>2013-02-05T17:09:42Z</time>
+      <name>GLT0000398</name>
+    </trkpt>
+    <trkpt lat="52.15597913" lon="4.49506933">
+      <ele>2.44</ele>
+      <time>2013-02-05T17:09:45Z</time>
+      <name>GLT0000399</name>
+    </trkpt>
+    <trkpt lat="52.15594845" lon="4.49527326">
+      <ele>1.15</ele>
+      <time>2013-02-05T17:09:48Z</time>
+      <name>GLT0000400</name>
+    </trkpt>
+    <trkpt lat="52.15592700" lon="4.49553587">
+      <ele>0.05</ele>
+      <time>2013-02-05T17:09:51Z</time>
+      <name>GLT0000401</name>
+    </trkpt>
+    <trkpt lat="52.15591011" lon="4.49569529">
+      <ele>0.24</ele>
+      <time>2013-02-05T17:09:53Z</time>
+      <name>GLT0000402</name>
+    </trkpt>
+    <trkpt lat="52.15589514" lon="4.49586502">
+      <ele>-0.17</ele>
+      <time>2013-02-05T17:09:55Z</time>
+      <name>GLT0000403</name>
+    </trkpt>
+    <trkpt lat="52.15589514" lon="4.49586502">
+      <ele>-0.17</ele>
+      <time>2013-02-05T17:09:55Z</time>
+      <name>GLT0000404</name>
+    </trkpt>
+    <trkpt lat="52.15585680" lon="4.49621933">
+      <ele>-1.06</ele>
+      <time>2013-02-05T17:10:00Z</time>
+      <name>GLT0000405</name>
+    </trkpt>
+    <trkpt lat="52.15577968" lon="4.49666759">
+      <ele>-0.21</ele>
+      <time>2013-02-05T17:10:05Z</time>
+      <name>GLT0000406</name>
+    </trkpt>
+    <trkpt lat="52.15569721" lon="4.49721007">
+      <ele>0.13</ele>
+      <time>2013-02-05T17:10:10Z</time>
+      <name>GLT0000407</name>
+    </trkpt>
+    <trkpt lat="52.15567939" lon="4.49756429">
+      <ele>0.67</ele>
+      <time>2013-02-05T17:10:15Z</time>
+      <name>GLT0000408</name>
+    </trkpt>
+    <trkpt lat="52.15564562" lon="4.49794893">
+      <ele>0.66</ele>
+      <time>2013-02-05T17:10:20Z</time>
+      <name>GLT0000409</name>
+    </trkpt>
+    <trkpt lat="52.15557701" lon="4.49835604">
+      <ele>1.40</ele>
+      <time>2013-02-05T17:10:25Z</time>
+      <name>GLT0000410</name>
+    </trkpt>
+    <trkpt lat="52.15546746" lon="4.49880481">
+      <ele>1.34</ele>
+      <time>2013-02-05T17:10:30Z</time>
+      <name>GLT0000411</name>
+    </trkpt>
+    <trkpt lat="52.15539772" lon="4.49929507">
+      <ele>1.66</ele>
+      <time>2013-02-05T17:10:35Z</time>
+      <name>GLT0000412</name>
+    </trkpt>
+    <trkpt lat="52.15536524" lon="4.49964208">
+      <ele>1.72</ele>
+      <time>2013-02-05T17:10:40Z</time>
+      <name>GLT0000413</name>
+    </trkpt>
+    <trkpt lat="52.15540040" lon="4.49977493">
+      <ele>1.84</ele>
+      <time>2013-02-05T17:10:45Z</time>
+      <name>GLT0000414</name>
+    </trkpt>
+    <trkpt lat="52.15540614" lon="4.49984291">
+      <ele>3.80</ele>
+      <time>2013-02-05T17:10:50Z</time>
+      <name>GLT0000415</name>
+    </trkpt>
+    <trkpt lat="52.15534093" lon="4.49994793">
+      <ele>7.97</ele>
+      <time>2013-02-05T17:11:16Z</time>
+      <name>GLT0000416</name>
+    </trkpt>
+    <trkpt lat="52.15524877" lon="4.49999118">
+      <ele>7.22</ele>
+      <time>2013-02-05T17:11:22Z</time>
+      <name>GLT0000417</name>
+    </trkpt>
+    <trkpt lat="52.15533027" lon="4.49989738">
+      <ele>5.56</ele>
+      <time>2013-02-05T17:12:17Z</time>
+      <name>GLT0000418</name>
+    </trkpt>
+    <trkpt lat="52.15538821" lon="4.49978476">
+      <ele>5.56</ele>
+      <time>2013-02-05T17:12:17Z</time>
+      <name>GLT0000419</name>
+    </trkpt>
+    <trkpt lat="52.15515573" lon="4.49988143">
+      <ele>5.56</ele>
+      <time>2013-02-05T17:12:41Z</time>
+      <name>GLT0000420</name>
+    </trkpt>
+    <trkpt lat="52.15515582" lon="4.49985984">
+      <ele>5.73</ele>
+      <time>2013-02-05T17:12:42Z</time>
+      <name>GLT0000421</name>
+    </trkpt>
+    <trkpt lat="52.15518293" lon="4.49982220">
+      <ele>2.81</ele>
+      <time>2013-02-05T17:12:43Z</time>
+      <name>GLT0000422</name>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

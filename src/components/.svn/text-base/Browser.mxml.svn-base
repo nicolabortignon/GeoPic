@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:browser="components.browserComp.*" creationComplete="init()">
+	<mx:Script>
+		<![CDATA[
+import flash.events.Event;
+		private function init():void {
+			trackList.addEventListener("trackSelected", onTrackSelected);
+			
+			
+		}
+		private function onTrackSelected(e:Event):void {
+			trace("Main ziet selectie!");
+			var trk:XML = e.target.selectedTrack as XML;
+		
+			//viewer.selectedFile = trk.file;
+			trace("file: " + trk.file);
+			viewer.showTrack(trk.file);
+			stack.selectedChild = viewerCanvas;
+			stack.height = 800;
+		}
+		]]>
+	</mx:Script>
+	<mx:LinkBar dataProvider="stack"></mx:LinkBar>
+	<mx:ViewStack id="stack" width="100%" height="100%" creationPolicy="all">
+		<mx:Canvas label="browse tracks" id="browse">
+			<browser:TrackList id="trackList"></browser:TrackList>
+		</mx:Canvas>
+		<mx:Canvas id="viewerCanvas">
+			<browser:Viewer id="viewer" height="800"></browser:Viewer>
+		</mx:Canvas>
+	</mx:ViewStack>
+</mx:Panel>

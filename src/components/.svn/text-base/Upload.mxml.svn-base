@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel title="Upload track" xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()">
+	
+	<mx:Script>
+		<![CDATA[
+import flash.events.Event;
+import flash.net.FileReference;
+import flash.net.FileReferenceList;
+import flash.net.URLLoader;
+import flash.net.URLRequest;
+import flash.net.URLRequestMethod;
+import flash.net.URLVariables;
+import mx.core.Application;
+import roekensk.dao.UserDaoEvent;
+import roekensk.flex.entities.User;
+import roekensk.geo.utils.GeoCalculation;
+import roekensk.geo.webservices.GpxService;
+import roekensk.geo.webservices.TrackService;
+import roekensk.utils.Math2;
+			
+		private var fileRefList:FileReferenceList;
+		private var fileRef:FileReference;
+		
+		private var url:String;
+		private var gpxService:GpxService;
+		//private var user_id:String = "2";
+		
+		[Bindable]
+		private var types:Array = [ { label:"Generic",data:1 } ];
+		
+		private var user:User;
+		private var loggedIn:Boolean = false;
+		
+		private function init():void {
+			if (parentApplication.activeUser != null) {
+				btnSubmit.enabled = false;
+			} else {
+				btnSubmit.enabled = true;
+			}
+			parentApplication.addEventListener(UserDaoEvent.LOGIN_SUCCESS, onUserLogin);
+
+		}
+		
+		private function onUserLogin(e:UserDaoEvent):void {
+			trace("UPLOAD COMPONENT -> loggedin");
+				//user = Application.application.getUser();
+				btnSubmit.enabled = true;
+				trace(e.target.user.username);
+				user = e.target.user as User;
+				
+		}
+		
+		private function openFileChooser():void {
+			fileRefList = new FileReferenceList();
+			fileRefList.addEventListener(Event.SELECT, onFileSelected);
+			fileRefList.browse();
+		}
+		private function onFileSelected(e:Event):void {
+			var fileRefList:FileReferenceList = FileReferenceList(e.target);
+			var fileList:Array = fileRefList.fileList;
+			
+			fileRef = FileReference(fileList[0]);
+			trace(fileRef.name);
+			fileName.text = fileRef.name;
+			fileRef.addEventListener(Event.COMPLETE, onUploadComplete);
+		}
+		
+		private function submit():void {
+			var uploadRequest:URLRequest = new URLRequest("http://krob.xtreemhost.com/flex/upload.php");
+			var variables:URLVariables = new URLVariables();
+			trace(uploadRequest.method);
+			uploadRequest.method = URLRequestMethod.POST;
+			uploadRequest.data = variables;
+			var d:Date = new Date();
+			
+			var year:String = ""+d.getFullYear();
+			url = "/"+user.id + "/" + year.substring(2) + "/" + fileRef.name;
+			
+			variables.user_id = user.id;
+			trace(url);
+			fileRef.upload(uploadRequest,"file");
+		}
+		private function onUploadComplete(e:Event):void {
+			trace(e.target);
+			trace("upload Complete!");
+			trace("http://krob.xtreemhost.com/flex" + url);
+			gpxService = new GpxService("http://krob.xtreemhost.com/flex"+url);
+			gpxService.load();
+			gpxService.addEventListener(Event.COMPLETE, onGpxLoaded);
+			
+		}
+		private function onGpxLoaded(e:Event):void {
+			trace("loaded");
+			var avgSpd:String = ""+Math2.roundDecimal(GeoCalculation.calcAverageSpeed(gpxService.getTrack()),2);
+			var dist:String = ""+Math2.roundDecimal(GeoCalculation.calcTotalDistance(gpxService.getTrack()),2);
+			var dur:String = ""+Math2.roundDecimal(GeoCalculation.calcOverallTime(gpxService.getTrack()),2);
+			trace("avgSpd: " + avgSpd);
+			var submitDataRequest:URLRequest = new URLRequest("http://krob.xtreemhost.com/flex/submitTrack.php");
+			var variables:URLVariables = new URLVariables();
+			variables.avg_spd = avgSpd;
+			variables.dist = dist;
+			variables.dur = dur;
+			variables.url = url;
+			variables.location = location.text;
+			variables.date = trackDate.text;
+			variables.userid = user.id;
+			
+			
+			trace("test: " + avgSpd);
+			submitDataRequest.data = variables;
+			submitDataRequest.method = URLRequestMethod.POST;
+			
+			var urlLoader:URLLoader = new URLLoader();
+			urlLoader.addEventListener(Event.COMPLETE, onDataSubmitted);
+			urlLoader.load(submitDataRequest);
+			
+		}
+		private function onDataSubmitted(e:Event):void {
+			trace("jeuj");
+			dispatchEvent(new Event("TRACK_SUBMITTED"));
+		}
+		]]>
+	</mx:Script>
+	<mx:Label id="version" text="1"></mx:Label>
+	
+	<mx:Form>
+		<mx:VBox>
+			<mx:HBox>
+				<mx:HBox>
+					<mx:Label text="File"></mx:Label> 
+					<mx:TextInput id="fileName" click="openFileChooser()" editable="false"></mx:TextInput>
+				</mx:HBox>
+				<mx:Button label="Browse" click="openFileChooser()"></mx:Button>
+				
+			</mx:HBox>
+			
+			<mx:HBox>
+				<mx:Label text="Location"></mx:Label>
+				<mx:TextInput id="location"></mx:TextInput>
+			</mx:HBox>
+			
+			<mx:HBox>
+				<mx:Label text="Date"></mx:Label>
+				<mx:DateField id="trackDate"></mx:DateField>
+			</mx:HBox>
+			
+			
+			<mx:HBox>
+				<mx:Label text="public"></mx:Label>
+				<mx:CheckBox id="openToPublic"></mx:CheckBox>
+			</mx:HBox>
+			
+			<mx:HBox>
+				<mx:Label text="Type"></mx:Label>
+				<mx:ComboBox id="type" dataProvider="{types}"></mx:ComboBox>
+			</mx:HBox>
+			
+			<mx:Button id="btnSubmit" label="Submit" click="submit()" enabled="true"></mx:Button>
+		</mx:VBox>
+		
+	</mx:Form>
+</mx:Panel>

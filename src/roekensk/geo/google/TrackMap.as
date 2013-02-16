@@ -1,0 +1,148 @@
+﻿package roekensk.geo.google 
+{
+	import com.google.maps.LatLng;
+	import com.google.maps.Map;
+	import com.google.maps.MapEvent;
+	import com.google.maps.MapMouseEvent;
+	import com.google.maps.MapType;
+	import com.google.maps.controls.MapTypeControl;
+	import com.google.maps.controls.PositionControl;
+	import com.google.maps.controls.ZoomControl;
+	import com.google.maps.overlays.Marker;
+	import com.google.maps.overlays.Polyline;
+	import com.google.maps.overlays.PolylineOptions;
+	
+	import flash.events.MouseEvent;
+	import flash.geom.Point;
+	
+	import roekensk.geo.google.events.TrackMapEvent;
+	import roekensk.geo.google.utils.GMapsUtils;
+	import roekensk.geo.objects.TrackPoint;
+	import roekensk.geo.utils.GeoCalculation;
+	
+	/**
+	* ...
+	* @author DefaultUser (Tools -> Custom Arguments...)
+	*/
+	public class TrackMap extends Map
+	{
+		public var overlays:Array = new Array();
+		public var track:Array;
+		
+		private var trackMarker:Marker;
+		
+		public var activeId:Number = 0;
+		public var ready:Boolean = false;
+		
+		public function TrackMap() 
+		{
+			super();
+			
+			this.addEventListener(MapEvent.MAP_READY, onMapReady);
+		}
+		
+		private function onMapReady(e:MapEvent):void {
+			addControl(new ZoomControl());
+			addControl(new PositionControl());
+			removeMapType(MapType.HYBRID_MAP_TYPE);
+			addControl(new MapTypeControl());
+
+			enableScrollWheelZoom();
+			
+			
+			setSize(new Point(300,300));
+			//dispatchEvent(new MapEvent(MapEvent.MAP_READY));
+			ready = true;
+		}
+		
+		public function createTrackOnMap(track:Array, selection:Array):void {
+			this.track = track;
+						
+			for (var a:Number = 0; a < overlays.length; a++) {
+				removeOverlay(overlays[a]);
+			}
+			var thick:int = 5;
+			var tempArr:Array = new Array();
+			overlays = new Array();
+			var line:Polyline;
+			if (selection == null || (selection[0] - selection[1] == 0)) {
+				var l:int = track.length;
+				for (var i:int = 0; i < l; i++) {
+					tempArr.push(GMapsUtils.convertTrackPointToLatLng(track[i] as TrackPoint));
+					
+				}
+				line = new Polyline(tempArr);
+				overlays.push(line);
+			}
+			
+			if (selection != null && (selection[0]-selection[1] != 0)) {
+				for (var j:int = 0; j <= selection[0]; j++) {
+					tempArr.push(GMapsUtils.convertTrackPointToLatLng(track[j] as TrackPoint));
+				}
+				line = new Polyline(tempArr, new PolylineOptions({strokeStyle: { thickness: thick, color: 0x0000FF, alpha: 0.5, pixelHinting: true } }));
+				tempArr = new Array();
+				overlays.push(line);
+				
+				for (var k:int = selection[0]; k <= selection[1]; k++) {
+					tempArr.push(GMapsUtils.convertTrackPointToLatLng(track[k] as TrackPoint));
+				}
+				line = new Polyline(tempArr, new PolylineOptions({strokeStyle: { thickness: thick + 2, color: 0xFF0000, alpha: 0.5, pixelHinting: true } }));
+				tempArr = new Array();
+				overlays.push(line);
+				
+				var len:int = track.length;
+				for (var i5:int = selection[1]; i5 < len; i5++) {
+					tempArr.push(GMapsUtils.convertTrackPointToLatLng(track[i5] as TrackPoint));
+				}
+				line = new Polyline(tempArr, new PolylineOptions({strokeStyle: { thickness: thick, color: 0x0000FF, alpha: 0.5, pixelHinting: true } }));
+				tempArr = new Array();
+				overlays.push(line);
+			}
+
+			var lenght:int = overlays.length;
+			for (var m:int = 0; m < lenght; m++) {
+				
+				overlays[m].addEventListener(MapMouseEvent.MOUSE_UP, onMapTrackClicked);
+				
+				addOverlay(overlays[m]);
+			}
+			
+			//putPointersOnMap();
+		}
+		
+		public function centerMapOnTrack(track:Array):void {
+			var begin:TrackPoint = track[0];
+			var verste:TrackPoint = GeoCalculation.findFurthestPointFrom(track, track[0]);//track[track.length-1];
+			var c:LatLng = new LatLng((begin.lat + verste.lat)/2,(begin.lon+verste.lon)/2);
+			setCenter(c, 14, MapType.PHYSICAL_MAP_TYPE);
+		}
+		
+		public function setSelection(track:Array, selection:Array):void {
+			//if ((selection[0] - selection[1]) != 0) {
+				createTrackOnMap(track, selection);
+				moveMarker(activeId = selection[0]);
+			/*} else {
+				
+			}*/
+		}
+		private function moveMarker(id:Number):void {
+			setCenter(GMapsUtils.convertTrackPointToLatLng(track[id]));
+			if (null == trackMarker) {
+				trackMarker = new Marker(GMapsUtils.convertTrackPointToLatLng(track[id]));
+				trackMarker.shadow.visible = false;
+				addOverlay(trackMarker);
+			} else {
+				trackMarker.setLatLng(GMapsUtils.convertTrackPointToLatLng(track[id]));
+			}
+		}
+		
+		public function onMapTrackClicked(e:MapMouseEvent):void {
+			var tp:TrackPoint = GMapsUtils.convertLatLngToTrackPoint(e.latLng);
+			var id:Number = GeoCalculation.findNearestId(track, tp);
+			setSelection(track,new Array(id,id));
+			
+			dispatchEvent(new TrackMapEvent(TrackMapEvent.SELECTION_CHANGED));
+		}
+	}
+	
+}

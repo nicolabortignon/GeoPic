@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:ViewStack xmlns:mx="http://www.adobe.com/2006/mxml" local:xmlns="components.*">
+	<mx:Canvas name="browser">
+		<local:TrackList></local:TrackList>
+	</mx:Canvas>
+	<mx:Canvas>
+		<local:Viewer></local:Viewer>
+	</mx:Canvas>
+</mx:ViewStack>

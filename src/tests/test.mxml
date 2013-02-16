@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Script>
+		<![CDATA[
+import flash.events.Event;
+import flash.net.FileReference;
+import flash.net.FileReferenceList;
+import flash.net.URLRequest;
+			
+		private var fileRefList:FileReferenceList;
+		
+		private function openFileChooser():void {
+			fileRefList = new FileReferenceList();
+			fileRefList.addEventListener(Event.SELECT, onFileSelected);
+			fileRefList.browse();
+		}
+		private function onFileSelected(e:Event):void {
+			var fileRefList:FileReferenceList = FileReferenceList(e.target);
+			var fileList:Array = fileRefList.fileList;
+			
+			var fileRef:FileReference = FileReference(fileList[0]);
+			trace(fileRef.name);
+			fileRef.addEventListener(Event.COMPLETE, onUploadComplete);
+			
+			
+			var uploadRequest:URLRequest = new URLRequest("upload.php");
+			fileRef.upload(uploadRequest);
+		}
+		
+		private function onUploadComplete(e:Event):void {
+			trace("upload Complete!");
+		}
+		]]>
+	</mx:Script>
+	<mx:XML id="service" source="http://127.0.0.1/flexTest/test.php"></mx:XML>
+		
+	<mx:TextInput id="txtText"/>
+	
+	
+	 <mx:DataGrid id="grid" x="10" y="10" dataProvider="{service..user}">
+    <mx:columns> 
+      <mx:DataGridColumn dataField="id" /> 
+	  <mx:DataGridColumn dataField="username" />
+	  <mx:DataGridColumn dataField="email" />
+    </mx:columns> 
+  </mx:DataGrid>
+  
+  
+  <mx:Button label="upload file" click="openFileChooser()"></mx:Button>
+</mx:Application>
