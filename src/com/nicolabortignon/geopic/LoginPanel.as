@@ -3,13 +3,15 @@ package com.nicolabortignon.geopic
 	import com.greensock.TweenMax;
 	
 	import flash.display.MovieClip;
+	import flash.events.FocusEvent;
+	import flash.events.MouseEvent;
 	import flash.system.Capabilities;
 	import flash.text.TextField;
 	
 	public class LoginPanel extends MovieClip
 	{
-		public var passwordTextField:TextField;
-		public var usernameTextField:TextField;
+		public var passwordTextfield:TextField;
+		public var usernameTextfield:TextField;
 		
 		
 		public function LoginPanel()
@@ -18,8 +20,20 @@ package com.nicolabortignon.geopic
 			this.visible = false;
 			this.alpha = 0;
 			
-			
+			usernameTextfield.addEventListener(MouseEvent.CLICK, selectUsernameTextField);
 		}
+		
+	
+		private function selectUsernameTextField(e:MouseEvent) {
+			e.target.setSelection(0, e.target.getLineLength(0));
+		}
+		
+		function addSelectListener(e:FocusEvent) {
+			 
+		}
+		
+		 
+		
 		
 		public function show(){
 			var appIstance:ApplicationCapabilities = ApplicationCapabilities.getInstance();
