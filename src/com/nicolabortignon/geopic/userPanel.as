@@ -7,7 +7,7 @@ package com.nicolabortignon.geopic
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	
-	public class userPanel extends MovieClip
+	public class UserPanel extends MovieClip
 	{
 		public var userPanelContent:MovieClip;
 		public var expandButton:MovieClip;
@@ -16,7 +16,7 @@ package com.nicolabortignon.geopic
 		private var _isUserPanelOpen:Boolean = false;
 		private var _isLogged:Boolean = false;
 		
-		public function userPanel()
+		public function UserPanel()
 		{
 			super();
 			expandButton.buttonMode = true;
@@ -25,14 +25,27 @@ package com.nicolabortignon.geopic
 			expandButton.addEventListener(MouseEvent.CLICK, expandImpldePanel);
 			this.visible = false;
 			
+			userPanelContent.logoutButton.addEventListener(MouseEvent.CLICK, logoutHandler);
+			
 		}
 		
+		private function logoutHandler(e:MouseEvent):void{
+			ApplicationController.getInstance().logoutUser();
+		}
 		public function login(username:String):void{
 			_isLogged = true;
 			usernameTextField.text = username;
 			this.visible = true;
 		}
-		private function expandImpldePanel(e:MouseEvent):void{
+		
+		public function logout():void{
+			_isUserPanelOpen = false;
+			expandButton.gotoAndStop(1);
+			TweenMax.to(userPanelContent,.5,{y:_userPanelYPosition-userPanelContent.height});
+			this.visible = false;
+		
+		}
+		private function expandImpldePanel(e:MouseEvent = null):void{
 			_userPanelYPosition
 			if(_isLogged){
 				if(_isUserPanelOpen){

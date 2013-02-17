@@ -55,7 +55,7 @@ package com.nicolabortignon.geopic
 		}
 		private function onCompleteLoginRegister(e : Event):void{ 
 		 
-			var s:String = '{"code":"correct","message":"Login successful"}';
+			var s:String = e.target.data;
 			loginCallbackFunction(s);
 		}
 	}

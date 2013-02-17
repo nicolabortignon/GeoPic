@@ -26,6 +26,8 @@ package com.nicolabortignon.geopic
 		private var _retrivingRemote:Boolean;
 		
 		public const welcomeBackMessage:String = "Welcome Back, logging in and retrieving your informations";
+		public const contactingServer:String = "Verifing your credentials";
+		public const fillCredentials:String = "Fill your credentials and start geotagging now";
 		public const emailString:String = "email";
 		public const passwordString:String = "password";
 		
@@ -66,6 +68,7 @@ package com.nicolabortignon.geopic
 			//	loaderLogin.visible = true;
 			//	logoCappuccino.visible = false;
 			if(_retrivingRemote == false){
+				outputMessage.text = contactingServer;
 				this.mouseChildren = false;
 				TweenMax.to(loaderLogin,.5,{autoAlpha:1});
 				TweenMax.to(logoCappuccino,.5,{autoAlpha:0});
@@ -87,8 +90,8 @@ package com.nicolabortignon.geopic
 				SettingsManager.getInstance().username = usernameTextfield.text;
 				SettingsManager.getInstance().password = passwordTextfield.text;
 				SettingsManager.getInstance().saveData(); 
-				
-				ApplicationController.beginTutorial();
+				ApplicationController.getInstance().updateUserInformations();
+				ApplicationController.getInstance().beginTutorial();
 				
 			} else {
 				// there was an error UH!
@@ -143,9 +146,11 @@ package com.nicolabortignon.geopic
 		}
 		
 		public function hide(){
-			TweenMax.to(this,.5,{autoAlpha:0,ease:Quart.easeIn, y:(this.y+100)});
+			TweenMax.to(this,.5,{autoAlpha:0,ease:Quart.easeOut, y:(this.y+100)});
 		}
 		public function show(){
+			_retrivingRemote = false;
+			outputMessage.text = fillCredentials;
 			var appIstance:ApplicationCapabilities = ApplicationCapabilities.getInstance();
 			this.x = ((appIstance.mainWindowWidth - this.width) / 2);
 			this.y = (appIstance.mainWindowHeight - this.height + 100) / 2;

@@ -1,9 +1,10 @@
 package
 {
 	import com.nicolabortignon.geopic.ApplicationCapabilities;
+	import com.nicolabortignon.geopic.ApplicationController;
 	import com.nicolabortignon.geopic.LoginPanel;
 	import com.nicolabortignon.geopic.SettingsManager;
-	import com.nicolabortignon.geopic.userPanel;
+	import com.nicolabortignon.geopic.UserPanel;
 	
 	import flash.desktop.NativeApplication;
 	import flash.display.MovieClip;
@@ -16,7 +17,7 @@ package
 		public var closeButton:MovieClip;
 		public var minimizeButton:MovieClip;
 		public var loginPanel:LoginPanel;
-		public var userPanelMovieClip:userPanel;
+		public var userPanelMovieClip:UserPanel;
 	 
 		public function Main()
 		{
@@ -28,7 +29,8 @@ package
 			draggableNativeWindowBar.addEventListener(MouseEvent.MOUSE_DOWN, dragApplication);
 			
 			SettingsManager.getInstance().loadCredentials();
-			
+			ApplicationController.getInstance().loginPanel = loginPanel;
+			ApplicationController.getInstance().userPanelMovieClip = userPanelMovieClip;
 		}
 	 
 		private function completeDone(e:Event):void{

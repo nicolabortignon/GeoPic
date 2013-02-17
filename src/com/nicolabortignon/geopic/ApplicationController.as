@@ -1,12 +1,13 @@
 package com.nicolabortignon.geopic
 {
 	public class ApplicationController {
-		private static var instance:ApplicationCapabilities;
+		private static var instance:ApplicationController;
 		private static var allowInstantiation:Boolean;
 		
  		
 		
-		public loginPanel:LoginPanel;
+		public var loginPanel:LoginPanel;
+		public var userPanelMovieClip:UserPanel;
 		
 		
 		public static function getInstance():ApplicationController {
@@ -32,7 +33,14 @@ package com.nicolabortignon.geopic
 		
 		
 		public function updateUserInformations(){
+			userPanelMovieClip.login(SettingsManager.getInstance().username);
 			
+		}
+		
+		public function logoutUser():void{
+			userPanelMovieClip.logout();
+			SettingsManager.getInstance().deleteSettings();
+			loginPanel.show();
 			
 		}
 	}

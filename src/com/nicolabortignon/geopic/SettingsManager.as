@@ -74,6 +74,7 @@ package com.nicolabortignon.geopic
 		}
 		
 		public function deleteSettings():void{
+			trace("Delete current user information  ======= ");
 			if(settingFile.exists)
 			settingFile.deleteFile();
 		}
