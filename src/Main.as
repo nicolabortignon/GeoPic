@@ -2,6 +2,8 @@ package
 {
 	import com.nicolabortignon.geopic.ApplicationCapabilities;
 	import com.nicolabortignon.geopic.LoginPanel;
+	import com.nicolabortignon.geopic.SettingsManager;
+	import com.nicolabortignon.geopic.userPanel;
 	
 	import flash.desktop.NativeApplication;
 	import flash.display.MovieClip;
@@ -14,6 +16,7 @@ package
 		public var closeButton:MovieClip;
 		public var minimizeButton:MovieClip;
 		public var loginPanel:LoginPanel;
+		public var userPanelMovieClip:userPanel;
 	 
 		public function Main()
 		{
@@ -24,11 +27,12 @@ package
 			minimizeButton.addEventListener(MouseEvent.CLICK, minimizeApp);
 			draggableNativeWindowBar.addEventListener(MouseEvent.MOUSE_DOWN, dragApplication);
 			
+			SettingsManager.getInstance().loadCredentials();
 			
 		}
 	 
 		private function completeDone(e:Event):void{
- 			trace("ADDED TO STAGE");
+ 	 
 			var appIstance:ApplicationCapabilities = ApplicationCapabilities.getInstance();
 			appIstance.mainWindowWidth = 1024;
 			appIstance.mainWindowHeight = 768;
@@ -36,9 +40,13 @@ package
 			stage.nativeWindow.x = (Capabilities.screenResolutionX - appIstance.mainWindowWidth) / 2;
 			stage.nativeWindow.y = (Capabilities.screenResolutionY - appIstance.mainWindowHeight) / 2;
 			
+			var credentialAvailable:Boolean = SettingsManager.getInstance().loadCredentials();
 			
+			if(credentialAvailable){
+				 
+				loginPanel.automaticLogin();
+			}
 			loginPanel.show();
-			
 		}
 		
 		private function closeApp(m:MouseEvent):void
