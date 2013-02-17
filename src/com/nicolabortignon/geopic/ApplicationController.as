@@ -8,6 +8,7 @@ package com.nicolabortignon.geopic
 		
 		public var loginPanel:LoginPanel;
 		public var userPanelMovieClip:UserPanel;
+		public var tutorialPanel:TutorialPanel;
 		
 		
 		public static function getInstance():ApplicationController {
@@ -26,7 +27,7 @@ package com.nicolabortignon.geopic
 		
 		
 		public function beginTutorial(){
-			
+			tutorialPanel.show();
 			
 			
 		}

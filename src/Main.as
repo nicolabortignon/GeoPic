@@ -4,6 +4,7 @@ package
 	import com.nicolabortignon.geopic.ApplicationController;
 	import com.nicolabortignon.geopic.LoginPanel;
 	import com.nicolabortignon.geopic.SettingsManager;
+	import com.nicolabortignon.geopic.TutorialPanel;
 	import com.nicolabortignon.geopic.UserPanel;
 	
 	import flash.desktop.NativeApplication;
@@ -18,6 +19,7 @@ package
 		public var minimizeButton:MovieClip;
 		public var loginPanel:LoginPanel;
 		public var userPanelMovieClip:UserPanel;
+		public var tutorialPanel:TutorialPanel;
 	 
 		public function Main()
 		{
@@ -31,6 +33,7 @@ package
 			SettingsManager.getInstance().loadCredentials();
 			ApplicationController.getInstance().loginPanel = loginPanel;
 			ApplicationController.getInstance().userPanelMovieClip = userPanelMovieClip;
+			ApplicationController.getInstance().tutorialPanel = tutorialPanel;
 		}
 	 
 		private function completeDone(e:Event):void{
@@ -45,7 +48,6 @@ package
 			var credentialAvailable:Boolean = SettingsManager.getInstance().loadCredentials();
 			
 			if(credentialAvailable){
-				 
 				loginPanel.automaticLogin();
 			}
 			loginPanel.show();
