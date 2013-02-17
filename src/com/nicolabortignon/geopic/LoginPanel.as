@@ -13,6 +13,8 @@ package com.nicolabortignon.geopic
 		public var passwordTextfield:TextField;
 		public var usernameTextfield:TextField;
 		
+		public const emailString:String = "email";
+		public const passwordString:String = "password";
 		
 		public function LoginPanel()
 		{
@@ -20,19 +22,55 @@ package com.nicolabortignon.geopic
 			this.visible = false;
 			this.alpha = 0;
 			
-			usernameTextfield.addEventListener(MouseEvent.CLICK, selectUsernameTextField);
+			usernameTextfield.text= emailString;
+			passwordTextfield.text = passwordString;
+			
+			
+			usernameTextfield.addEventListener(MouseEvent.CLICK, clickUsernameTextField);
+			usernameTextfield.addEventListener(FocusEvent.FOCUS_IN, selectUsernameTextField);
+			usernameTextfield.addEventListener(FocusEvent.FOCUS_OUT, deselectUsernameTextField);
+			
+			passwordTextfield.addEventListener(MouseEvent.CLICK, clickPasswordTextField);
+			passwordTextfield.addEventListener(FocusEvent.FOCUS_IN, selectPasswordTextField);
+			passwordTextfield.addEventListener(FocusEvent.FOCUS_OUT, deselectPasswordTextField);
 		}
 		
 	
-		private function selectUsernameTextField(e:MouseEvent) {
-			e.target.setSelection(0, e.target.getLineLength(0));
+		private function selectUsernameTextField(e:FocusEvent) {
+			if(usernameTextfield.text == emailString){
+				usernameTextfield.text = "";
+			} else {
+				e.target.setSelection(0, e.target.getLineLength(0));
+			}
 		}
-		
-		function addSelectListener(e:FocusEvent) {
+		private function deselectUsernameTextField(e:FocusEvent) {
+			if(usernameTextfield.text == "")
+				usernameTextfield.text = emailString;
+		}
+		 
+		private function clickUsernameTextField(e:MouseEvent):void{
 			 
 		}
-		
 		 
+		 
+		 private function selectPasswordTextField(e:FocusEvent) {
+			 if(passwordTextfield.text == passwordString){
+				 passwordTextfield.text = "";
+				 passwordTextfield.displayAsPassword = true; 
+			 } else {
+				 e.target.setSelection(0, e.target.getLineLength(0));
+			 }
+		 }
+		 private function deselectPasswordTextField(e:FocusEvent) {
+			 if(passwordTextfield.text == ""){
+				 passwordTextfield.text = passwordString;
+				 passwordTextfield.displayAsPassword = false; 
+			 }
+		 }
+		 
+		 private function clickPasswordTextField(e:MouseEvent):void{
+			 
+		 }
 		
 		
 		public function show(){
