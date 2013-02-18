@@ -26,10 +26,12 @@ package com.nicolabortignon.geopic
 		}
 		
 		
-		public function beginTutorial(){
+		public function beginTutorial():void{
 			tutorialPanel.show();
-			
-			
+		}
+		
+		public function endTutorial():void{
+			tutorialPanel.hide();
 		}
 		
 		

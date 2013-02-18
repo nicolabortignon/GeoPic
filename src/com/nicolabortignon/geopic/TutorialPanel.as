@@ -16,7 +16,7 @@ package com.nicolabortignon.geopic
 		private const _leftShadowPosition:int = 273;
 		private const _rightButtonPosition:int = 565;
 		private const _rightShadowPosition:int = 114;
-		private const _totalPages:int = 5;
+		private const _totalPages:int =6;
 		private var _currentPage:int = 0; 
 		public function TutorialPanel()
 		{
@@ -39,13 +39,7 @@ package com.nicolabortignon.geopic
 			currentPage.rightShadow.visible = false;
 			
 			
-			currentPage.addEventListener(MouseEvent.CLICK, nextPage);
-			rightButton.addEventListener(MouseEvent.CLICK, nextPage);
-			leftButton.addEventListener(MouseEvent.CLICK, previousPage);
-			rightButton.addEventListener(MouseEvent.MOUSE_OVER, overStateRight);
-			rightButton.addEventListener(MouseEvent.MOUSE_OUT, outStateRight);
-			leftButton.addEventListener(MouseEvent.MOUSE_OVER, overStateLeft);
-			leftButton.addEventListener(MouseEvent.MOUSE_OUT, outStateLeft);
+		
 			
 			_currentPage = 0;
 		
@@ -74,6 +68,12 @@ package com.nicolabortignon.geopic
 		
 		private function nextPage(e:MouseEvent):void{
 			// move NEXT
+			if(_currentPage == _totalPages-1){
+				this.mouseChildren = false;
+				trace("INIT");
+				ApplicationController.getInstance().endTutorial();
+				return;
+			}
 			if(_currentPage < _totalPages){
 				_currentPage++;
 				TweenMax.to(currentPage,.2,{x:currentPage.x - 300,y:currentPage.y+100,scaleX:.8,scaleY:.8, autoAlpha:.1, onComplete:function(){
@@ -129,9 +129,35 @@ package com.nicolabortignon.geopic
 			
 		}
 		
-		
-		public function show():void{
+		public function hide():void{
+			currentPage.removeEventListener(MouseEvent.CLICK, nextPage);
+			rightButton.removeEventListener(MouseEvent.CLICK, nextPage);
+			leftButton.removeEventListener(MouseEvent.CLICK, previousPage);
+			rightButton.removeEventListener(MouseEvent.MOUSE_OVER, overStateRight);
+			rightButton.removeEventListener(MouseEvent.MOUSE_OUT, outStateRight);
+			leftButton.removeEventListener(MouseEvent.MOUSE_OVER, overStateLeft);
+			leftButton.removeEventListener(MouseEvent.MOUSE_OUT, outStateLeft);
 			
+			TweenMax.to(rightButton,.5,{ x: ApplicationCapabilities.getInstance().mainWindowHeight+500});
+			TweenMax.to(leftButton,.5,{ x:-500});
+			TweenMax.to(currentPage,1,{ autoAlpha:0});
+			
+			
+			
+		}
+		public function show():void{
+			currentPage.addEventListener(MouseEvent.CLICK, nextPage);
+			rightButton.addEventListener(MouseEvent.CLICK, nextPage);
+			leftButton.addEventListener(MouseEvent.CLICK, previousPage);
+			rightButton.addEventListener(MouseEvent.MOUSE_OVER, overStateRight);
+			rightButton.addEventListener(MouseEvent.MOUSE_OUT, outStateRight);
+			leftButton.addEventListener(MouseEvent.MOUSE_OVER, overStateLeft);
+			leftButton.addEventListener(MouseEvent.MOUSE_OUT, outStateLeft);
+			
+			this.mouseChildren = true;
+			leftButton.gotoAndStop(1);
+			rightButton.gotoAndStop(2);
+			currentPage.gotoAndStop(1);
 			leftButton.visible = false;
 			rightButton.gotoAndStop(2);
 			rightButton.x =  ApplicationCapabilities.getInstance().mainWindowHeight+500;
