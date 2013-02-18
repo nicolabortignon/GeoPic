@@ -40,6 +40,8 @@ package com.nicolabortignon.geopic
 			
 			
 			currentPage.addEventListener(MouseEvent.CLICK, nextPage);
+			rightButton.addEventListener(MouseEvent.CLICK, nextPage);
+			leftButton.addEventListener(MouseEvent.CLICK, previousPage);
 			rightButton.addEventListener(MouseEvent.MOUSE_OVER, overStateRight);
 			rightButton.addEventListener(MouseEvent.MOUSE_OUT, outStateRight);
 			leftButton.addEventListener(MouseEvent.MOUSE_OVER, overStateLeft);
@@ -72,15 +74,66 @@ package com.nicolabortignon.geopic
 		
 		private function nextPage(e:MouseEvent):void{
 			// move NEXT
+			if(_currentPage < _totalPages){
+				_currentPage++;
+				TweenMax.to(currentPage,.2,{x:currentPage.x - 300,y:currentPage.y+100,scaleX:.8,scaleY:.8, autoAlpha:.1, onComplete:function(){
+					currentPage.gotoAndStop(_currentPage+1);
+					rightButton.gotoAndStop(_currentPage+2);
+					leftButton.gotoAndStop(_currentPage);
+					currentPage.x = currentPage.x + 600;
+					currentPage.alpha = 1;
+					currentPage.visible = true;
+					TweenMax.to(currentPage,.2,{scaleX:1,scaleY:1,y:currentPage.y-100,x:currentPage.x - 300, autoAlpha:1});
+				}});
+				leftButton.visible = true;
+				rightButton.visible = true;
+				
+			}
+			if(_currentPage == _totalPages){
+				rightButton.visible = false;
+			}
+			if(_currentPage == 1){
+				leftButton.visible = false;
+				TweenMax.to(leftButton,.5,{autoAlpha:1, delay:.2});
+			}
 			
 		}
 		
 		private function previousPage(e:MouseEvent):void{
+			if(_currentPage >= 0){
+				_currentPage--;
+				TweenMax.to(currentPage,.2,{scaleX:.6,scaleY:.6,y:currentPage.y+100,  x:currentPage.x + 400, autoAlpha:.1, onComplete:function(){
+					currentPage.gotoAndStop(_currentPage+1);
+					rightButton.gotoAndStop(_currentPage+2);
+					leftButton.gotoAndStop(Math.max(0,_currentPage));
+					currentPage.x = currentPage.x - 600;
+					currentPage.alpha = 1;
+					currentPage.visible = true;
+					TweenMax.to(currentPage,.2,{scaleX:1,scaleY:1,y:currentPage.y-100,x:currentPage.x + 200, autoAlpha:1});
+				}});
+			
+				leftButton.visible = true;
+				rightButton.visible = true;
+				
+			}
+			if(_currentPage == 0){
+				leftButton.visible = false;
+			}
+			if(_currentPage < _totalPages-1){
+				rightButton.visible = false;
+				rightButton.alpha = 0;
+				TweenMax.to(rightButton,.5,{autoAlpha:1, delay:.2});
+			}
+	
+			
 			
 		}
 		
 		
 		public function show():void{
+			
+			leftButton.visible = false;
+			rightButton.gotoAndStop(2);
 			rightButton.x =  ApplicationCapabilities.getInstance().mainWindowHeight+500;
 			leftButton.x = -500;
 			currentPage.alpha = 0;
