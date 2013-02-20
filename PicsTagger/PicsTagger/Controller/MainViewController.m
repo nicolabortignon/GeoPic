@@ -72,6 +72,7 @@
     rotator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundLoader.png"]];
     [rotator setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 170, 67, 67)];
     [self.view addSubview:rotator];
+    [self animating];
     
     startButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [startButton setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
@@ -108,30 +109,39 @@
     city = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, screenSize.width, 30)];
     [city setBackgroundColor:[UIColor clearColor]];
     city.font = [UIFont systemFontOfSize:16];
-    city.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+    city.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:16];
     city.layer.shadowOffset = CGSizeMake(1.0, 1.0);
     city.textColor = [UIColor whiteColor];
     [city setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:city];
         
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    
+    
+    [self performSelector:@selector(setMyPosition:) withObject:locationManager afterDelay:5.0];
+    
+    
+    
+    
+}
+
+- (void) setMyPosition: (CLLocationManager*)locationManager {
+    
+    NSLog(@"qui");
     CLLocation *loc = locationManager.location;
     CLGeocoder * name = [[CLGeocoder alloc] init];
     [name reverseGeocodeLocation:loc completionHandler:^(NSArray *placemarks, NSError *error){
-                   if(!error){
-                       for(CLPlacemark *placemark in placemarks) {
-                           NSString* city1 =  [placemark.addressDictionary objectForKey:(NSString*) kABPersonAddressCityKey];
-                           [city setText:city1];
-                       }
-                   }
-                   else {
-                       NSLog(@"There was a reverse geocoding error\n%@", [error localizedDescription]);
-                   }
-               }
+        if(!error){
+            for(CLPlacemark *placemark in placemarks) {
+                NSString* city1 =  [placemark.addressDictionary objectForKey:(NSString*) kABPersonAddressCityKey];
+                [city setText:city1];
+            }
+        }
+        else {
+            NSLog(@"There was a reverse geocoding error\n%@", [error localizedDescription]);
+        }
+    }
      ];
-    
-    
-    
     
 }
 
@@ -147,17 +157,14 @@
         [[TKAlertCenter defaultCenter] postAlertWithMessage:@"Start Tracking!"];
         [self startTracking];
         [startButton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
-        [self animating];
     }
     
 }
 
 - (void)animating {
-    if(running) {
         int p = round([[NSDate date] timeIntervalSince1970]);
         [self rotateImage:rotator duration:1.0 curve:UIViewAnimationCurveLinear degrees:( (p % 360) )];
         [self performSelector:@selector(animating) withObject:nil afterDelay:1.0];
-    }
 }
 
 - (void)rotateImage:(UIImageView *)image duration:(NSTimeInterval)duration
@@ -170,7 +177,7 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     
     // The transform matrix
-    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI*degrees/180);
+    //CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI*degrees/180);
     image.transform = CGAffineTransformMakeRotation(degrees);
     
     // Commit the changes

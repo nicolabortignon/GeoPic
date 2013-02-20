@@ -133,6 +133,28 @@ static DataWrapper *sharedWrapper = nil;
     
 }
 
+- (NSArray*) trackPoint:(NSString*)track {
+    
+    NSMutableArray *fetchResults;
+    NSString *entityName= @"Points";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"track==%i",[track intValue]]];
+    NSLog(@"%i", fetchResults.count);
+    NSMutableArray *pointsArray = [[NSMutableArray alloc] init];
+    for(int i=0; i<fetchResults.count;i++) {
+        float lat = [[[fetchResults objectAtIndex:i] valueForKey:@"latitude"] floatValue];
+        float lon = [[[fetchResults objectAtIndex:i] valueForKey:@"longitude"] floatValue];
+        CLLocation *point = [[CLLocation alloc ] initWithLatitude:lat longitude:lon];
+        [pointsArray addObject:point];
+    }
+    NSArray *back = pointsArray;
+    return back;
+    
+}
+
 - (id)copyWithZone:(NSZone *)zone {
     
     return self;

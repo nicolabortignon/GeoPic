@@ -15,6 +15,7 @@
 @implementation EditDetailViewController
 
 @synthesize track_name;
+@synthesize pathLayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,11 +57,12 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, 160, screenSize.width-40, 250)];
     [mapView setDelegate:self];
-    mapView.showsUserLocation = YES;
-    mapView.userTrackingMode = YES;
+    mapView.showsUserLocation = NO;
+    mapView.userTrackingMode = NO;
     mapView.layer.cornerRadius = 8.0;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 800, 800);
-    [mapView setRegion:viewRegion animated:YES];
+    //MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 800, 800);
+    //[mapView setRegion:viewRegion animated:YES];
+    
     [self.view addSubview:mapView];
     
     button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -69,6 +71,8 @@
     [self.view addSubview:button];
     [button addTarget:self action:@selector(storeName) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    pathLayer = [[MapRouteLayer alloc] initWithRoute:[[DataWrapper sharedWrapper] trackPoint:track_detail] mapView:mapView];
     
 }
 

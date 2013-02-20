@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataWrapper.h"
+#import "TrackDetail.h"
 
 @interface HistoryControllerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     UITableView *table;

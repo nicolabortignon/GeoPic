@@ -12,6 +12,7 @@
 #import <TapkuLibrary/TapkuLibrary.h>
 #import "DataWrapper.h"
 #import "Tracker.h"
+#import "MapRouteLayer.h"
 
 @interface EditDetailViewController : UIViewController <UITextFieldDelegate,MKMapViewDelegate> {
     
@@ -19,11 +20,13 @@
     UITextField *track_name;
     MKMapView *mapView;
     UIButton *button;
+    MapRouteLayer *pathLayer;
     
 }
 
 @property (nonatomic, retain) UITextField *track_name;
 @property (strong,nonatomic) TKProgressAlertView *alertView;
+@property (nonatomic, retain) MapRouteLayer *pathLayer;
 
 - (id)initWithTrack:(NSString*)track;
 

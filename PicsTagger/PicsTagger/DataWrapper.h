@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 #import "BundleWrapper.h"
+#import <MapKit/MapKit.h>
 
 @interface DataWrapper : NSObject {
     NSManagedObjectContext *managedObjectContext;
@@ -24,6 +25,7 @@
 - (void) updateNameTracks:(NSString*)name track:(NSString*)track;
 
 - (NSArray*) trackList;
+- (NSArray*) trackPoint:(NSString*)track;
 - (NSString*) userTitleForTrack:(NSString*)track;
 
 

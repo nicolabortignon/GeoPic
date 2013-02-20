@@ -165,7 +165,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self.navigationController pushViewController:[[TrackDetail alloc] initWithTrack:[[trackList objectAtIndex:indexPath.row] valueForKey:@"timestamp"]] animated:YES];
 }
 
 
