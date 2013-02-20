@@ -45,12 +45,13 @@ static Login *sharedLogin =nil;
 }
 
 - (void) alertStatus:(NSString *)msg {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+    [[TKAlertCenter defaultCenter] postAlertWithMessage:msg];
+    /*UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
                                                         message:msg
                                                        delegate:self
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil, nil];
-    [alertView show];
+    [alertView show];*/
 }
 
 - (NSString *) md5:(NSString *) input
@@ -71,7 +72,7 @@ static Login *sharedLogin =nil;
 - (BOOL)loginPost:(NSString*)user password:(NSString*)password {
     @try {
         if([user isEqualToString:@""] || [password isEqualToString:@""] ) {
-            NSLog(@"  qui  ");
+            //NSLog(@"  qui  ");
             NSString *error_msg = @"Please enter both Username and Password";
             [self performSelectorOnMainThread:@selector(alertStatus:) withObject:error_msg waitUntilDone:NO];
             return FALSE;
@@ -80,7 +81,7 @@ static Login *sharedLogin =nil;
             NSString* md5 = [self md5:password];
             
             NSString *post = [[NSString alloc] initWithFormat:@"email=%@&password=%@",user,md5];
-            NSLog(@"PostData: %@",post);
+            //NSLog(@"PostData: %@",post);
             NSURL *url=[NSURL URLWithString:@"http://www.stopsharing.me/geopic/login.php"];
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
             NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
@@ -97,15 +98,79 @@ static Login *sharedLogin =nil;
             NSHTTPURLResponse *response = nil;
             NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
             
-            NSLog(@"Response code: %d", [response statusCode]);
+            //NSLog(@"Response code: %d", [response statusCode]);
             if ([response statusCode] >=200 && [response statusCode] <300)
             {
                 NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
                 SBJsonParser *jsonParser = [SBJsonParser new];
                 NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:responseData error:nil];
-                NSLog(@"%@",jsonData);
+                //NSLog(@"%@",jsonData);
                 NSString * success = [NSString stringWithFormat:@"%@", [jsonData objectForKey:@"code"]];
-                NSLog(@"%@",success);
+                //NSLog(@"%@",success);
+                if([success isEqualToString:@"correct"])
+                {
+                    [[BundleWrapper sharedBundle] setLogin:user];
+                    [[BundleWrapper sharedBundle] setLoged:@"True"];
+                    [[BundleWrapper sharedBundle] setPassword:md5];
+                    return TRUE;
+                } else {
+                    NSString *error_msg = (NSString *) [jsonData objectForKey:@"message"];
+                    [self performSelectorOnMainThread:@selector(alertStatus:) withObject:error_msg waitUntilDone:NO];
+                    return FALSE;
+                }
+                
+            } else {
+                //if (error) NSLog(@"Error: %@", error);
+                NSString *error_msg = @"Connection Fail";
+                [self performSelectorOnMainThread:@selector(alertStatus:) withObject:error_msg waitUntilDone:NO];
+                return FALSE;
+            }
+        }
+    }
+    @catch (NSException * e) {
+        NSLog(@"Exception: %@", e);
+        NSString *error_msg = @"Failed";
+        [self performSelectorOnMainThread:@selector(alertStatus:) withObject:error_msg waitUntilDone:NO];
+    }
+}
+
+- (BOOL)loginPostWithoutMd5:(NSString*)user password:(NSString*)password {
+    @try {
+        if([user isEqualToString:@""] || [password isEqualToString:@""] ) {
+            NSString *error_msg = @"Please enter both Username and Password";
+            [self performSelectorOnMainThread:@selector(alertStatus:) withObject:error_msg waitUntilDone:NO];
+            return FALSE;
+        }
+        else {
+            NSString* md5 = password;
+            
+            NSString *post = [[NSString alloc] initWithFormat:@"email=%@&password=%@",user,md5];
+            //NSLog(@"PostData: %@",post);
+            NSURL *url=[NSURL URLWithString:@"http://www.stopsharing.me/geopic/login.php"];
+            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+            NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+            [request setURL:url];
+            [request setHTTPMethod:@"POST"];
+            [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPBody:postData];
+            
+            [NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
+            NSError *error = [[NSError alloc] init];
+            NSHTTPURLResponse *response = nil;
+            NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            
+            //NSLog(@"Response code: %d", [response statusCode]);
+            if ([response statusCode] >=200 && [response statusCode] <300)
+            {
+                NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+                SBJsonParser *jsonParser = [SBJsonParser new];
+                NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:responseData error:nil];
+                //NSLog(@"%@",jsonData);
+                NSString * success = [NSString stringWithFormat:@"%@", [jsonData objectForKey:@"code"]];
+                //NSLog(@"%@",success);
                 if([success isEqualToString:@"correct"])
                 {
                     return TRUE;
@@ -117,8 +182,8 @@ static Login *sharedLogin =nil;
                 
             } else {
                 if (error) NSLog(@"Error: %@", error);
-                NSString *error_msg = @"Login Failed";
-                [self performSelectorOnMainThread:@selector(alertStatus:) withObject:error_msg waitUntilDone:NO];
+                //NSString *error_msg = @"Login Failed";
+                //[self performSelectorOnMainThread:@selector(alertStatus:) withObject:error_msg waitUntilDone:NO];
                 return FALSE;
             }
         }

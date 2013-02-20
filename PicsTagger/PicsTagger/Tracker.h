@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DataWrapper.h"
 #import "GpxManager.h"
+#import "SBJson.h"
 
 @interface Tracker : NSObject <CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
@@ -23,5 +24,6 @@
 + (Tracker *) sharedTracker;
 - (void)startTracking;
 - (NSString*)endTracking;
+-(bool) sendTracking_file:(NSString*)timestamp;
 
 @end

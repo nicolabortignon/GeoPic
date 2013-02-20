@@ -83,7 +83,6 @@ const int TUTORIALPAGE = 7;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"False" forKey:@"firstAcess"];
     [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
-    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)panDetected:(UIPanGestureRecognizer *)panRecognizer {

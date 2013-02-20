@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TutorialViewController.h"
 #import "Login.h"
+#import "BundleWrapper.h"
 
 @interface LoginController : UIViewController <UITextFieldDelegate> {
     

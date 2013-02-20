@@ -43,7 +43,8 @@
     
     login = [[Login alloc] init];
     activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    activity.center = self.view.center;
+    [activity setFrame:CGRectMake((int) screenBounds.size.width/2 - activity.frame.size.width/2, 20, activity.frame.size.width, activity.frame.size.height)];
+    //activity.center = self.view.center;
     [self.view addSubview:activity];
     
     button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -135,15 +136,11 @@
     if(pass == NULL) {
         pass = @"";
     }
-    BOOL suceed = [login loginPost:mail password:pass];
+    BOOL suceed = [[Login sharedLogin] loginPost:mail password:pass];
     [activity stopAnimating];
     [button setEnabled:YES];
     if (suceed) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:mail forKey:@"login"];
-        [defaults setObject:@"True" forKey:@"loged"];
         [self performSelectorOnMainThread:@selector(showTutorial) withObject:nil waitUntilDone:NO];
-        NSLog(@"loggato");
     }
     else {
         
@@ -157,7 +154,8 @@
 - (void)checkLogin:(id)sender {
     [activity startAnimating];
     [button setEnabled:NO];
-    [self performSelectorInBackground:@selector(loginThread) withObject:nil];
+    [self performSelectorOnMainThread:@selector(loginThread) withObject:nil waitUntilDone:YES];
+    //[self performSelector:@selector(loginThread) withObject:nil afterDelay:0.1];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

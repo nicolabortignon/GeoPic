@@ -19,6 +19,7 @@
 @synthesize history;
 @synthesize nameTextField;
 @synthesize profile;
+@synthesize mapView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,51 +29,55 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     running = FALSE;
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     if (screenBounds.size.height == 568) {
-        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"MainPage_568.jpg"]]];
+        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"MainPagepiuLoupe_568.png"]]];
     } else {
         [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"SplashOnlyImage.jpg"]]];
     }
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *firstAccess = [defaults objectForKey:@"firstAcess"];
-    NSString *loged = [defaults objectForKey:@"loged"];
-    NSString *login = [defaults objectForKey:@"login"];
-    
-    if (loged == NULL) {
+    /***    TEST LOGIN ***/
+        
+    if ([[BundleWrapper sharedBundle] userLoged] == NULL) {
         [self.navigationController pushViewController:[[LoginController alloc] init] animated:YES];
     }
     else {
-        NSLog(@"%@", loged);
-        if ([loged isEqualToString:@"False"]) {
+        if ([[[BundleWrapper sharedBundle] userLoged] isEqualToString:@"False"]) {
             if(loginController == nil) {
                 loginController = [[LoginController alloc] init];
             }
             [self.navigationController pushViewController:loginController animated:YES];
         }
         else {
-            if (firstAccess == NULL) {
-                [defaults setObject:@"False" forKey:@"firstAcess"];
-                [self.navigationController pushViewController:[[TutorialViewController alloc] init] animated:NO];
+            if ( [[Login sharedLogin] loginPostWithoutMd5:[[BundleWrapper sharedBundle] userLogin] password:[[BundleWrapper sharedBundle] userPassword]] ) {
             }
             else {
-                NSLog(@"Already loged %@", login);
+                if(loginController == nil) {
+                    loginController = [[LoginController alloc] init];
+                }
+                [self.navigationController pushViewController:[[LoginController alloc] init]  animated:YES];
             }
         }
     }
     
+    /******* --------------------- *******/
+    
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    rotator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundLoader.png"]];
+    [rotator setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 170, 67, 67)];
+    [self.view addSubview:rotator];
+    
     startButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [startButton setBackgroundImage:[UIImage imageNamed:@"ButtonOff.png"] forState:UIControlStateNormal];
+    [startButton setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
+    [startButton setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 170, 67, 67)];
     
     
-    [startButton setFrame:CGRectMake(screenSize.width/2 - 28, screenSize.height - 200, 56, 65)];
     [self.view addSubview:startButton];
     [startButton addTarget:self action:@selector(actionButtonPushed) forControlEvents:UIControlEventTouchUpInside];
     
@@ -82,38 +87,107 @@
     [history addTarget:self action:@selector(showHistory) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:history];
     
-    
     profile = [UIButton buttonWithType:UIButtonTypeCustom];
     [profile setBackgroundImage:[UIImage imageNamed:@"profile.jpg"] forState:UIControlStateNormal];
     [profile setFrame:CGRectMake(160, screenSize.height - 95, 160, 75)];
-    [profile addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    [profile addTarget:self action:@selector(showProfile) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:profile];
+    
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(screenSize.width/2 - 80, 132, 160, 160)];
+    [mapView setDelegate:self];
+    mapView.showsUserLocation = YES;
+    mapView.userTrackingMode = YES;
+    mapView.zoomEnabled = NO;
+    mapView.scrollEnabled = NO;
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 5000, 5000);
+    [mapView setRegion:viewRegion animated:YES];
+    [mapView.layer setMasksToBounds:YES];
+    [mapView.layer setCornerRadius:80.0];
+    [self.view addSubview:mapView];
+    
+    city = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, screenSize.width, 30)];
+    [city setBackgroundColor:[UIColor clearColor]];
+    city.font = [UIFont systemFontOfSize:16];
+    city.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+    city.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    city.textColor = [UIColor whiteColor];
+    [city setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:city];
+        
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    CLLocation *loc = locationManager.location;
+    CLGeocoder * name = [[CLGeocoder alloc] init];
+    [name reverseGeocodeLocation:loc completionHandler:^(NSArray *placemarks, NSError *error){
+                   if(!error){
+                       for(CLPlacemark *placemark in placemarks) {
+                           NSString* city1 =  [placemark.addressDictionary objectForKey:(NSString*) kABPersonAddressCityKey];
+                           [city setText:city1];
+                       }
+                   }
+                   else {
+                       NSLog(@"There was a reverse geocoding error\n%@", [error localizedDescription]);
+                   }
+               }
+     ];
+    
+    
     
     
 }
 
 - (void) actionButtonPushed {
+    
     if(running) {
         running = FALSE;
         [self endTracking];
-        [startButton setBackgroundImage:[UIImage imageNamed:@"ButtonOff.png"] forState:UIControlStateNormal];
+        [startButton setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
     }
     else {
         running = TRUE;
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"Start Tracking!"];
         [self startTracking];
-        [startButton setBackgroundImage:[UIImage imageNamed:@"ButtonOn.png"] forState:UIControlStateNormal];
+        [startButton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+        [self animating];
+    }
+    
+}
+
+- (void)animating {
+    if(running) {
+        int p = round([[NSDate date] timeIntervalSince1970]);
+        [self rotateImage:rotator duration:1.0 curve:UIViewAnimationCurveLinear degrees:( (p % 360) )];
+        [self performSelector:@selector(animating) withObject:nil afterDelay:1.0];
     }
 }
 
-- (void) logout {
-    NSLog(@"logout");
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@"" forKey:@"login"];
-    [defaults setObject:@"False" forKey:@"loged"];
+- (void)rotateImage:(UIImageView *)image duration:(NSTimeInterval)duration
+              curve:(int)curve degrees:(CGFloat)degrees
+{
+    // Setup the animation
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:duration];
+    [UIView setAnimationCurve:curve];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    // The transform matrix
+    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI*degrees/180);
+    image.transform = CGAffineTransformMakeRotation(degrees);
+    
+    // Commit the changes
+    [UIView commitAnimations];
+
+}
+
+- (void) showProfile {
+    [self.navigationController pushViewController:[[ProfileViewController alloc] init] animated:YES];
+    /*NSLog(@"logout");
+    [[BundleWrapper sharedBundle] setLogin:@""];
+    [[BundleWrapper sharedBundle] setLoged:@"False"];
+    [[BundleWrapper sharedBundle] setPassword:@""];
     if(loginController == nil) {
         loginController = [[LoginController alloc] init];
     }
-    [self.navigationController pushViewController:loginController animated:YES];
+    [self.navigationController pushViewController:loginController animated:YES];*/
 
 }
 
@@ -126,72 +200,17 @@
 }
 
 - (void) endTracking {
+    
     last_track = [[Tracker sharedTracker] endTracking];
-    
-    nameTextField = [[UITextField alloc] init];
-    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Set a Name", @"track_set_name")
-                                                          message:@"name" delegate:self cancelButtonTitle:@"Save" otherButtonTitles:nil];
-    nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 45.0, 260.0, 25.0)];
-    [nameTextField setBackgroundColor:[UIColor whiteColor]];
-    [myAlertView addSubview:nameTextField];
-    [myAlertView show];
-    
-    /*
-    NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
-    if ([MFMailComposeViewController canSendMail])
-    {
-        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-        mailer.mailComposeDelegate = self;
-        [mailer setSubject:@"Gpx testing"];
-        NSArray *toRecipients = [NSArray arrayWithObjects:@"baggio.alberto87@gmail.com", @"andrea.cervellin@gmail.com", nil];
-        [mailer setToRecipients:toRecipients];
-        [mailer addAttachmentData:data mimeType:@"application/xml" fileName:@"track.gpx"];
-        NSString *emailBody = @"Speremo ben";
-        [mailer setMessageBody:emailBody isHTML:NO];
-        [self presentModalViewController:mailer animated:YES];
-    }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
-                                                        message:@"Your device doesn't support the composer sheet"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles: nil];
-        [alert show];
-    } */
+    [self.navigationController pushViewController:[[EditDetailViewController alloc] initWithTrack:last_track] animated:YES];
     
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     [[DataWrapper sharedWrapper] updateNameTracks:[nameTextField text] track:last_track];
-    NSLog(@"%@", [nameTextField text]);
+    [[Tracker sharedTracker] sendTracking_file:last_track];
 }
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
-{
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
-            break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
-            break;
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
-            break;
-        default:
-            NSLog(@"Mail not sent.");
-            break;
-    }
-    // Remove the mail view
-    [self dismissModalViewControllerAnimated:YES];
-}
-
 
 - (void)didReceiveMemoryWarning
 {

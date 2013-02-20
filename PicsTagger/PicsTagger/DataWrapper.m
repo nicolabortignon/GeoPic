@@ -15,43 +15,41 @@
 static DataWrapper *sharedWrapper = nil;
 
 + (DataWrapper *) sharedWrapper {
-    if (sharedWrapper == nil)
-    {
+    
+    if (sharedWrapper == nil) {
         sharedWrapper = [[super allocWithZone:NULL] init];
     }
     return sharedWrapper;
+    
 }
 
 + (id)allocWithZone:(NSZone *)zone {
-    @synchronized(self)
     
-    {
-        if (sharedWrapper == nil)
-            
-        {
+    @synchronized(self) {
+        if (sharedWrapper == nil) {
             sharedWrapper = [super allocWithZone:zone];
             return sharedWrapper;
         }
     }
     return nil;
+    
 }
 
 - (id) init {
+    
     self = [super init];
     AppDelegate* app = [[UIApplication sharedApplication] delegate];
     managedObjectContext = [app managedObjectContext];
     return self;
+    
 }
 
 - (void) createTrack:(int) time {
-    NSLog(@"%i", time);
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *login = [defaults objectForKey:@"login"];
     [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObject *track = [NSEntityDescription
-                                       insertNewObjectForEntityForName:@"Tracks"
-                                       inManagedObjectContext:managedObjectContext];
+    NSManagedObject *track = [NSEntityDescription insertNewObjectForEntityForName:@"Tracks" inManagedObjectContext:managedObjectContext];
     [track setValue:[NSNumber numberWithInt:time] forKey:@"timestamp"];
     [track setValue:login forKey:@"user"];
     [track setValue:FALSE forKey:@"sent"];
@@ -60,23 +58,42 @@ static DataWrapper *sharedWrapper = nil;
     if (![managedObjectContext save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
+    
+}
+
+- (void) setTrackSentStatus: (NSString*) status track:(NSString*)track {
+    
+    NSMutableArray *fetchResults;
+    NSString *entityName= @"Tracks";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"timestamp==%i",[track intValue]]];
+    if ([status isEqualToString:@"True"]) {
+        [[fetchResults objectAtIndex:0] setValue:[NSNumber numberWithBool:TRUE] forKey:@"sent"];
+    }
+    if (![managedObjectContext save:nil])
+        NSLog(@"Error in storing to database");
+    
 }
 
 - (NSArray*) trackList {
+    
     NSError *error;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Tracks" inManagedObjectContext:managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tracks" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
-    NSArray *trackList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    return trackList;
+    NSMutableArray * fetchResults;
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"user==%@",[[BundleWrapper sharedBundle] userLogin]]];
+    return fetchResults;
+    
 }
 
 - (void) storePoint:(int)track timestamp:(NSDate*)time latitude:(float)latitude longitude:(float)longitude {
-    NSLog(@"store %@", time);
-    NSManagedObject *point = [NSEntityDescription
-                              insertNewObjectForEntityForName:@"Points"
-                              inManagedObjectContext:managedObjectContext];
+    
+    NSManagedObject *point = [NSEntityDescription insertNewObjectForEntityForName:@"Points" inManagedObjectContext:managedObjectContext];
     [point setValue:[NSNumber numberWithInt:track] forKey:@"track"];
     [point setValue:time forKey:@"timestamp"];
     [point setValue:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
@@ -85,26 +102,41 @@ static DataWrapper *sharedWrapper = nil;
     if (![managedObjectContext save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
+    
 }
 
 - (void) updateNameTracks:(NSString*)name track:(NSString*)track {
-    NSLog(@"%@, %@", track, name);
+    
     NSMutableArray *fetchResults;
     NSString *entityName= @"Tracks";
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
-    
     fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
-    
     [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"timestamp==%i",[track intValue]]];
     [[fetchResults objectAtIndex:0] setValue:name forKey:@"name"];
     if (![managedObjectContext save:nil])
         NSLog(@"Error in storing to database");
+    
+}
+
+- (NSString*) userTitleForTrack:(NSString*)track {
+    
+    NSMutableArray *fetchResults;
+    NSString *entityName= @"Tracks";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"timestamp==%i",[track intValue]]];
+    return [[fetchResults objectAtIndex:0] valueForKey:@"name"];
+    
 }
 
 - (id)copyWithZone:(NSZone *)zone {
+    
     return self;
+    
 }
 
 @end

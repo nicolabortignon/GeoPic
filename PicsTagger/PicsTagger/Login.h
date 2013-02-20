@@ -10,10 +10,13 @@
 
 #import <Foundation/Foundation.h>
 #import "SBJson.h"
+#import "BundleWrapper.h"
+#import <TapkuLibrary/TapkuLibrary.h>
 
 @interface Login : NSObject
 
 + (Login *) sharedLogin;
 - (BOOL)loginPost:(NSString*)user password:(NSString*)password;
+- (BOOL)loginPostWithoutMd5:(NSString*)user password:(NSString*)password;
 
 @end

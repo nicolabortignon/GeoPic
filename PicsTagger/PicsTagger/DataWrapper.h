@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import "BundleWrapper.h"
 
 @interface DataWrapper : NSObject {
     NSManagedObjectContext *managedObjectContext;
@@ -16,9 +17,14 @@
 @property (nonatomic,retain) NSManagedObjectContext *managedObjectContext;
 
 + (DataWrapper*) sharedWrapper;
+
 - (void) createTrack:(int) time;
+- (void) setTrackSentStatus: (NSString*) status track:(NSString*)track;
 - (void) storePoint:(int)track timestamp:(NSDate*)time latitude:(float)latitude longitude:(float)longitude;
-- (NSArray*) trackList;
 - (void) updateNameTracks:(NSString*)name track:(NSString*)track;
+
+- (NSArray*) trackList;
+- (NSString*) userTitleForTrack:(NSString*)track;
+
 
 @end

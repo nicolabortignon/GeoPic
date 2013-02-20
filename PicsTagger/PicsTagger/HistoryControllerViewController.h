@@ -14,7 +14,7 @@
     UIButton *backButton;
     NSArray *trackList;
     NSDateFormatter *dateFormatter;
-    int selectedRow;
+    //int selectedRow;
 }
 
 @property (nonatomic, retain) UITableView* table;
