@@ -20,7 +20,7 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import "EditDetailViewController.h"
 #import "ProfileViewController.h"
-
+#import "ConnectionHandler.h"
 
 @interface MainViewController : UIViewController <MKMapViewDelegate> {
     

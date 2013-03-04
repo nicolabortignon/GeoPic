@@ -34,6 +34,7 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor greenColor]];
     
+    screenSize = [[UIScreen mainScreen] bounds].size;
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     if (screenBounds.size.height == 568) {
         [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"SplashOnlyImage_568.jpg"]]];
@@ -43,17 +44,19 @@
     
     login = [[Login alloc] init];
     activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [activity setFrame:CGRectMake((int) screenBounds.size.width/2 - activity.frame.size.width/2, 20, activity.frame.size.width, activity.frame.size.height)];
+    [activity setFrame:CGRectMake(screenSize.width/2 - activity.frame.size.width/2, screenSize.height - 72, activity.frame.size.width, activity.frame.size.height)];
     //activity.center = self.view.center;
-    [self.view addSubview:activity];
+    
     
     button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setBackgroundImage:[UIImage imageNamed:@"btnStart.png"] forState:UIControlStateNormal];
-    screenSize = [[UIScreen mainScreen] bounds].size;
+    
     
     [button setFrame:CGRectMake(screenSize.width/2 - 50, screenSize.height - 80, 99, 34)];
     [self.view addSubview:button];
     [button addTarget:self action:@selector(checkLogin:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:activity];
     
     email = [[UITextField alloc] initWithFrame:CGRectMake(screenSize.width/2 - 130, screenSize.height -200, 260, 40)];
     [email setText:@""];
@@ -97,6 +100,7 @@
     email.frame = CGRectMake(screenSize.width/2 - 130, screenSize.height -400, 260, 40);
     password.frame = CGRectMake(screenSize.width/2 - 130, screenSize.height -350, 260, 40);
     button.frame = CGRectMake(screenSize.width/2 - 50, screenSize.height - 280, 99, 34);
+    activity.frame = CGRectMake(screenSize.width/2 - activity.frame.size.width/2, screenSize.height - 272, activity.frame.size.width, activity.frame.size.height);
     logo.frame = CGRectMake(screenSize.width/2 - 78, screenSize.height - 470, 157, 37);
     [UIView commitAnimations];
 }
@@ -112,6 +116,7 @@
     email.frame = CGRectMake(screenSize.width/2 - 130, screenSize.height -200, 260, 40);
     password.frame = CGRectMake(screenSize.width/2 - 130, screenSize.height -150, 260, 40);
     button.frame = CGRectMake(screenSize.width/2 - 50, screenSize.height - 80, 99, 34);
+    activity.frame = CGRectMake(screenSize.width/2 - activity.frame.size.width/2, screenSize.height - 72, activity.frame.size.width, activity.frame.size.height);
     logo.frame = CGRectMake(screenSize.width/2 - 78, screenSize.height - 270, 157, 37);
     [UIView commitAnimations];
     [textField resignFirstResponder];
@@ -153,9 +158,10 @@
 
 - (void)checkLogin:(id)sender {
     [activity startAnimating];
+    NSLog(@"qui");
     [button setEnabled:NO];
-    [self performSelectorOnMainThread:@selector(loginThread) withObject:nil waitUntilDone:YES];
-    //[self performSelector:@selector(loginThread) withObject:nil afterDelay:0.1];
+    //[self performSelectorOnMainThread:@selector(loginThread) withObject:nil waitUntilDone:YES];
+    [self performSelector:@selector(loginThread) withObject:nil afterDelay:0.1];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

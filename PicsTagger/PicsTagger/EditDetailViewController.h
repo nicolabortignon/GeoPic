@@ -13,6 +13,7 @@
 #import "DataWrapper.h"
 #import "Tracker.h"
 #import "MapRouteLayer.h"
+#import "ConnectionHandler.h"
 
 @interface EditDetailViewController : UIViewController <UITextFieldDelegate,MKMapViewDelegate> {
     

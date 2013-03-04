@@ -57,7 +57,6 @@ static BundleWrapper *sharedBundle = nil;
     [bundle setValue:user forKey:@"login"];
 }
 - (void) setLoged: (NSString*)boolean {
-    NSLog(@"setto loggato");
     [bundle setValue:boolean forKey:@"loged"];
 }
 - (void) setPassword: (NSString*) md5Pass {

@@ -7,13 +7,15 @@
         <attribute name="track" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Tracks" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lastupdate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sent" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Tracks" positionX="160" positionY="192" width="128" height="103"/>
         <element name="Points" positionX="-92" positionY="192" width="128" height="103"/>
+        <element name="Tracks" positionX="160" positionY="192" width="128" height="135"/>
     </elements>
 </model>

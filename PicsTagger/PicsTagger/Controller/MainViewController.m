@@ -34,11 +34,13 @@
     [super viewDidLoad];
     running = FALSE;
     
+    [self performSelectorInBackground:@selector(synchronize) withObject:nil];
+    
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     if (screenBounds.size.height == 568) {
-        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"MainPagepiuLoupe_568.png"]]];
+        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"MainPage_568.png"]]];
     } else {
-        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"SplashOnlyImage.jpg"]]];
+        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"MainPage.png"]]];
     }
     
     /***    TEST LOGIN ***/
@@ -70,16 +72,12 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
     rotator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundLoader.png"]];
-    [rotator setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 170, 67, 67)];
-    [self.view addSubview:rotator];
-    [self animating];
+    [rotator setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 190, 67, 67)];
+    
     
     startButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [startButton setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
-    [startButton setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 170, 67, 67)];
-    
-    
-    [self.view addSubview:startButton];
+    [startButton setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 190, 67, 67)];
     [startButton addTarget:self action:@selector(actionButtonPushed) forControlEvents:UIControlEventTouchUpInside];
     
     history = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -94,7 +92,7 @@
     [profile addTarget:self action:@selector(showProfile) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:profile];
     
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(screenSize.width/2 - 80, 132, 160, 160)];
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(screenSize.width/2 - 90, 156, 180, 180)];
     [mapView setDelegate:self];
     mapView.showsUserLocation = YES;
     mapView.userTrackingMode = YES;
@@ -103,20 +101,39 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 5000, 5000);
     [mapView setRegion:viewRegion animated:YES];
     [mapView.layer setMasksToBounds:YES];
-    [mapView.layer setCornerRadius:80.0];
+    [mapView.layer setCornerRadius:90.0];
     [self.view addSubview:mapView];
     
     city = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, screenSize.width, 30)];
     [city setBackgroundColor:[UIColor clearColor]];
     city.font = [UIFont systemFontOfSize:16];
     city.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:16];
-    city.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    city.layer.shadowOffset = CGSizeMake(0, 1.0);
     city.textColor = [UIColor whiteColor];
+    [city setShadowColor:[UIColor blackColor]];
     [city setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:city];
-        
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     
+    if (screenSize.height == 568) {
+        
+    }
+    else {
+        [city setFrame:CGRectMake(0, 56, screenSize.width, 30)];
+        [mapView setFrame:CGRectMake(screenSize.width/2 - 90, 112, 180, 180)];
+        [startButton setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 172, 67, 67)];
+        [rotator setFrame:CGRectMake(screenSize.width/2 - 33, screenSize.height - 172, 67, 67)];
+        city.font = [UIFont systemFontOfSize:12];
+        city.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:16];
+        city.layer.shadowOffset = CGSizeMake(1.0, -1.0);
+        city.textColor = [UIColor whiteColor];
+        [city setShadowColor:[UIColor blackColor]];
+    }
+    
+    [self.view addSubview:rotator];
+    [self animating];
+    [self.view addSubview:startButton];
+    
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     
     [self performSelector:@selector(setMyPosition:) withObject:locationManager afterDelay:5.0];
     
@@ -125,9 +142,12 @@
     
 }
 
+- (void) synchronize {
+    [[ConnectionHandler sharedWrapper] synchronize];
+}
+
 - (void) setMyPosition: (CLLocationManager*)locationManager {
     
-    NSLog(@"qui");
     CLLocation *loc = locationManager.location;
     CLGeocoder * name = [[CLGeocoder alloc] init];
     [name reverseGeocodeLocation:loc completionHandler:^(NSArray *placemarks, NSError *error){
@@ -153,10 +173,16 @@
         [startButton setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
     }
     else {
-        running = TRUE;
-        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"Start Tracking!"];
-        [self startTracking];
-        [startButton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+        if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied ) {
+            running = TRUE;
+            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"Start Tracking!"];
+            [self startTracking];
+            [startButton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+        }
+        else {
+            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"Please enable the Location Services!"];
+        }
+        
     }
     
 }
@@ -186,15 +212,8 @@
 }
 
 - (void) showProfile {
+    
     [self.navigationController pushViewController:[[ProfileViewController alloc] init] animated:YES];
-    /*NSLog(@"logout");
-    [[BundleWrapper sharedBundle] setLogin:@""];
-    [[BundleWrapper sharedBundle] setLoged:@"False"];
-    [[BundleWrapper sharedBundle] setPassword:@""];
-    if(loginController == nil) {
-        loginController = [[LoginController alloc] init];
-    }
-    [self.navigationController pushViewController:loginController animated:YES];*/
 
 }
 
@@ -211,12 +230,6 @@
     last_track = [[Tracker sharedTracker] endTracking];
     [self.navigationController pushViewController:[[EditDetailViewController alloc] initWithTrack:last_track] animated:YES];
     
-}
-
-- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    [[DataWrapper sharedWrapper] updateNameTracks:[nameTextField text] track:last_track];
-    [[Tracker sharedTracker] sendTracking_file:last_track];
 }
 
 - (void)didReceiveMemoryWarning

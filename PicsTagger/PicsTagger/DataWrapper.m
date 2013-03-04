@@ -51,6 +51,7 @@ static DataWrapper *sharedWrapper = nil;
     [[UIApplication sharedApplication] delegate];
     NSManagedObject *track = [NSEntityDescription insertNewObjectForEntityForName:@"Tracks" inManagedObjectContext:managedObjectContext];
     [track setValue:[NSNumber numberWithInt:time] forKey:@"timestamp"];
+    [track setValue:[NSNumber numberWithInt:time] forKey:@"lastupdate"];
     [track setValue:login forKey:@"user"];
     [track setValue:FALSE forKey:@"sent"];
     [track setValue:@"Default Name" forKey:@"name"];
@@ -115,6 +116,23 @@ static DataWrapper *sharedWrapper = nil;
     fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
     [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"timestamp==%i",[track intValue]]];
     [[fetchResults objectAtIndex:0] setValue:name forKey:@"name"];
+    int time = [[NSDate date] timeIntervalSince1970];
+    [[fetchResults objectAtIndex:0] setValue:[NSNumber numberWithInt:time] forKey:@"lastupdate"];
+    if (![managedObjectContext save:nil])
+        NSLog(@"Error in storing to database");
+    
+}
+
+- (void) updateDistanceTracks:(float)distance track:(int)track {
+    
+    NSMutableArray *fetchResults;
+    NSString *entityName= @"Tracks";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"timestamp==%i",track ]];
+    [[fetchResults objectAtIndex:0] setValue:[NSNumber numberWithFloat:distance] forKey:@"distance"];
     if (![managedObjectContext save:nil])
         NSLog(@"Error in storing to database");
     
@@ -133,6 +151,19 @@ static DataWrapper *sharedWrapper = nil;
     
 }
 
+- (NSString*) lastUpdateTrack:(NSString*)track {
+    
+    NSMutableArray *fetchResults;
+    NSString *entityName= @"Tracks";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"timestamp==%i",[track intValue]]];
+    return [[fetchResults objectAtIndex:0] valueForKey:@"lastupdate"];
+    
+}
+
 - (NSArray*) trackPoint:(NSString*)track {
     
     NSMutableArray *fetchResults;
@@ -142,7 +173,6 @@ static DataWrapper *sharedWrapper = nil;
     [fetchRequest setEntity:entity];
     fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
     [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"track==%i",[track intValue]]];
-    NSLog(@"%i", fetchResults.count);
     NSMutableArray *pointsArray = [[NSMutableArray alloc] init];
     for(int i=0; i<fetchResults.count;i++) {
         float lat = [[[fetchResults objectAtIndex:i] valueForKey:@"latitude"] floatValue];
@@ -152,6 +182,50 @@ static DataWrapper *sharedWrapper = nil;
     }
     NSArray *back = pointsArray;
     return back;
+    
+}
+
+- (NSArray*) trackData:(NSString*)track {
+    
+    NSMutableArray *fetchResults;
+    NSString *entityName= @"Tracks";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"timestamp==%i",[track intValue]]];
+    return [fetchResults objectAtIndex:0];
+    
+}
+
+- (void) deleteTrack:(NSString*)track {
+    NSMutableArray *fetchResults;
+    NSString *entityName= @"Tracks";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"timestamp==%i",[track intValue]]];
+    for (NSManagedObject * track in fetchResults) {
+        [managedObjectContext deleteObject:track];
+    }
+    NSError *saveError = nil;
+    [managedObjectContext save:&saveError];
+    
+    entityName= @"Points";
+    fetchRequest = [[NSFetchRequest alloc] init];
+    entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchResults = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [fetchResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"track==%i",[track intValue]]];
+    for (NSManagedObject * track in fetchResults) {
+        [managedObjectContext deleteObject:track];
+    }
+    saveError = nil;
+    [managedObjectContext save:&saveError];
+}
+
+- (void) dataSynchronization {
     
 }
 

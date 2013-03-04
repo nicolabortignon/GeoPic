@@ -24,6 +24,5 @@
 + (Tracker *) sharedTracker;
 - (void)startTracking;
 - (NSString*)endTracking;
--(bool) sendTracking_file:(NSString*)timestamp;
 
 @end

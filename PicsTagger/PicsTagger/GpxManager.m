@@ -47,7 +47,7 @@ static GpxManager* sharedManger = nil;
     NSString *login = [defaults objectForKey:@"login"];
     NSString *gpx_name = [NSString stringWithFormat:@"%@_%i", login, track];
     
-    XMLWriter * xmlWrite = [[XMLWriter alloc] init];
+    XMLWriter * xmlWrite = [[XMLWriter alloc] init];    
     
     [xmlWrite writeStartDocumentWithEncodingAndVersion:@"UTF-8" version:@"1.0"];
     

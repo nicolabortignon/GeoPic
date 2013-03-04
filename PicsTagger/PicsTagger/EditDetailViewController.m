@@ -43,7 +43,7 @@
     } else {
         [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"EditDetail_568.jpg"]]];
     }
-    track_name = [[UITextField alloc] initWithFrame:CGRectMake(56, 103, screenBounds.size.width-80, 30)];
+    track_name = [[UITextField alloc] initWithFrame:CGRectMake(56, 103, screenBounds.size.width-95, 30)];
     track_name.font = [UIFont systemFontOfSize:15];
     track_name.placeholder = @"Track Name";
     track_name.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -66,13 +66,21 @@
     [self.view addSubview:mapView];
     
     button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setBackgroundImage:[UIImage imageNamed:@"btnStart.png"] forState:UIControlStateNormal];
-    [button setFrame:CGRectMake(screenSize.width/2 - 50, screenSize.height - 80, 99, 34)];
-    [self.view addSubview:button];
+    [button setBackgroundImage:[UIImage imageNamed:@"SendBtn.png"] forState:UIControlStateNormal];
+    [button setFrame:CGRectMake(screenSize.width/2 - 43, screenSize.height - 80, 86, 26)];
     [button addTarget:self action:@selector(storeName) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
     pathLayer = [[MapRouteLayer alloc] initWithRoute:[[DataWrapper sharedWrapper] trackPoint:track_detail] mapView:mapView];
+    [self.view addSubview:pathLayer];
+    [pathLayer setNeedsDisplay];
+    
+    if (screenSize.height == 568) {
+        
+    }
+    else {
+        [button setFrame:CGRectMake(screenSize.width/2 - 50, screenSize.height - 60, 99, 34)];
+    }
     
 }
 
@@ -84,23 +92,29 @@
         
         self.alertView.progressBar.progress = 0;
 		[self.alertView show];
-        [self performSelector:@selector(sendFile) withObject:nil];
         
+        [self performSelector:@selector(sendFile) withObject:nil afterDelay:0.1];
         //self.alertView.progressBar.progress = 1;
         //[self.navigationController popViewControllerAnimated:YES];
     }
 }
 
 - (void) sendFile {
-    bool send_suceed = [[Tracker sharedTracker] sendTracking_file:track_detail];
+    bool send_suceed = [[ConnectionHandler sharedWrapper] uploadTrack:track_detail];
     if (send_suceed) {
         self.alertView.progressBar.progress = 1;
+        self.alertView.title = @"Sending Data";
     }
     else {
         [self.alertView hide];
         [self performSelector:@selector(unableToSend) withObject:nil afterDelay:1.0];
     }
     [self.alertView hide];
+    [self performSelector:@selector(backToMain) withObject:nil afterDelay:0.5];
+    //[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) backToMain {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

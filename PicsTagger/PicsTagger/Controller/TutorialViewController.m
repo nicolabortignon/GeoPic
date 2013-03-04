@@ -17,7 +17,7 @@
 @synthesize scrollView;
 @synthesize pageControl;
 
-const int TUTORIALPAGE = 7;
+const int TUTORIALPAGE = 8;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,8 +45,8 @@ const int TUTORIALPAGE = 7;
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
     [self.scrollView addGestureRecognizer:panRecognizer];
     
-    NSArray *images568 = [NSArray arrayWithObjects:@"Tutorial0_568.jpg",@"Tutorial1_568.jpg",@"Tutorial2_568.jpg",@"Tutorial3_568.jpg",@"Tutorial4_568.jpg",@"Tutorial5_568.jpg",@"Tutorial6_568.jpg", nil];
-    NSArray *images = [NSArray arrayWithObjects:@"Tutorial0_568.jpg",@"Tutorial1.jpg",@"Tutorial2.jpg",@"Tutorial3.jpg",@"Tutorial4.jpg",@"Tutorial5.jpg",@"Tutorial6.jpg", nil];
+    NSArray *images568 = [NSArray arrayWithObjects:@"Tutorial0_568.jpg",@"TutorialSynchTime_568.png",@"Tutorial1_568.jpg",@"Tutorial2_568.jpg",@"Tutorial3_568.jpg",@"Tutorial4_568.jpg",@"Tutorial5_568.jpg",@"Tutorial6_568.png", nil];
+    NSArray *images = [NSArray arrayWithObjects:@"Tutorial0.png",@"TutorialSynchTime.png",@"Tutorial1.jpg",@"Tutorial2.jpg",@"Tutorial3.jpg",@"Tutorial4.png",@"Tutorial5.jpg",@"Tutorial6.png", nil];
     for (int i = 0; i<TUTORIALPAGE; i++) {
         CGRect frame;
         frame.origin.x = self.scrollView.frame.size.width * i;
